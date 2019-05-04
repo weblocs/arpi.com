@@ -8,6 +8,8 @@ import { getScreenWidth, timeoutThrottlerHandler } from "../utils/helpers";
 import Footer from "../components/Footer/";
 import Header from "../components/Header";
 
+import "../font/font.css";
+
 export const ThemeContext = React.createContext(null);
 export const ScreenWidthContext = React.createContext(0);
 export const FontLoadedContext = React.createContext(false);
@@ -27,8 +29,8 @@ class Layout extends React.Component {
     };
 
     if (typeof window !== `undefined`) {
-      this.loadFont("font400", "Open Sans", 400);
-      this.loadFont("font600", "Open Sans", 600);
+      this.loadFont("font400", "Roboto", 400);
+      this.loadFont("font600", "Roboto", 600);
     }
   }
 
@@ -141,9 +143,7 @@ class Layout extends React.Component {
                         padding: 0;
                       }
                       body {
-                        font-family: ${this.state.font400loaded
-                          ? "'Open Sans', sans-serif;"
-                          : "Arial, sans-serif;"};
+                        font-family: Geomanist, sans-serif;
                       }
                       h1,
                       h2,
@@ -170,6 +170,25 @@ class Layout extends React.Component {
                         width: auto;
                         display: block;
                       }
+                      a.button {
+                        background: #005495;
+                        border: 1px solid #005495;
+                        border-radius: 0;
+                        text-transform: none;
+                        opacity: 0.9;
+                        padding: 13px 34px;
+                        font-size: 13px;
+                        color: #fff;
+                        display: inline-block;
+                        margin-top: 20px;
+                        transition: .2s;
+
+                        :hover {
+                          border-color: #005495;
+                          background: transparent;
+                          color:  #005495;
+                        }
+                    }
                     `}</style>
                   </React.Fragment>
                 </ScreenWidthContext.Provider>

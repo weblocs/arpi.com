@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { FaArrowDown } from "react-icons/fa/";
-
 const Hero = props => {
   const { scrollToContent, backgrounds, theme } = props;
 
@@ -10,19 +8,19 @@ const Hero = props => {
     <React.Fragment>
       <section className="hero">
         <h1>
-          This is a demo site of&nbsp;the <strong>heroBlog</strong> GatsbyJS starter
+        Outsourcing solutions for your business.
         </h1>
-        <button onClick={scrollToContent} aria-label="scroll">
+        {/* <button onClick={scrollToContent} aria-label="scroll">
           <FaArrowDown />
-        </button>
+        </button> */}
       </section>
 
       {/* --- STYLES --- */}
       <style jsx>{`
         .hero {
-          align-items: center;
-          background: ${theme.hero.background};
-          background-image: url(${backgrounds.mobile});
+          align-items: baseline;
+          background: #041f60;
+          // background-image: url(${backgrounds.mobile});
           background-size: cover;
           color: ${theme.text.color.primary.inverse};
           display: flex;
@@ -40,6 +38,10 @@ const Hero = props => {
           margin: ${theme.space.stack.l};
           color: ${theme.hero.h1.color};
           line-height: ${theme.hero.h1.lineHeight};
+          line-height: 1.2;
+          font-size: 36px;
+          letter-spacing: 0.04em;
+          font-weight: 600;
           text-remove-gap: both 0 "Open Sans";
 
           :global(strong) {
@@ -100,13 +102,10 @@ const Hero = props => {
 
         @from-width tablet {
           .hero {
-            background-image: url(${backgrounds.tablet});
+            //background-image: url(${backgrounds.tablet});
           }
 
-          h1 {
-            max-width: 90%;
-            font-size: ${`calc(${theme.hero.h1.size} * 1.3)`};
-          }
+          
 
           button {
             font-size: ${theme.font.size.l};
@@ -115,13 +114,10 @@ const Hero = props => {
 
         @from-width desktop {
           .hero {
-            background-image: url(${backgrounds.desktop});
+            //background-image: url(${backgrounds.desktop});
           }
 
-          h1 {
-            max-width: 80%;
-            font-size: ${`calc(${theme.hero.h1.size} * 1.5)`};
-          }
+         
 
           button {
             font-size: ${theme.font.size.xl};

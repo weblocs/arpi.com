@@ -8,6 +8,7 @@ import { FaEnvelope } from "react-icons/fa/";
 import { FaTag } from "react-icons/fa/";
 
 import Item from "./Item";
+import CollapseItem from "./CollapseItem";
 import Expand from "./Expand";
 
 class Menu extends React.Component {
@@ -23,11 +24,12 @@ class Menu extends React.Component {
     }));
 
     this.items = [
-      { to: "/", label: "Home", icon: FaHome },
-      { to: "/category/", label: "Categories", icon: FaTag },
-      { to: "/search/", label: "Search", icon: FaSearch },
-      ...pages,
-      { to: "/contact/", label: "Contact", icon: FaEnvelope }
+      { label: "Browse services", 
+      subitems: [ 'Bemanning', 'Regnskap', 'Network', 'Staffing', 'Accounting', 'Aviation' ] },
+      { to: "/category/", label: "Dlaczego my" },
+      { to: "/search/", label: "Co oferujemy" },
+      // ...pages,
+      { to: "/contact/", label: "Kontakt" }
     ];
 
     this.renderedItems = []; // will contain references to rendered DOM elements of menu
@@ -142,13 +144,17 @@ class Menu extends React.Component {
     const { screenWidth, theme } = this.props;
     const { open } = this.state;
 
+    
+
     return (
       <React.Fragment>
         <nav className={`menu ${open ? "open" : ""}`} rel="js-menu">
           <ul className="itemList" ref={this.itemList}>
-            {this.items.map(item => (
-              <Item item={item} key={item.label} icon={item.icon} theme={theme} />
-            ))}
+              {this.items.map(item => (
+                item.subitems ? 
+                <CollapseItem item={{ label: item.label, subitems: item.subitems }}  theme={theme} />
+                :  <Item item={{to: item.to, label: item.label}} theme={theme} />
+              ))}
           </ul>
           {this.state.hiddenItems.length > 0 && <Expand onClick={this.toggleMenu} theme={theme} />}
           {open &&

@@ -50,6 +50,11 @@ const Item = props => {
               padding: ${theme.space.inset.s};
               transition: all ${theme.time.duration.default};
               border-radius: ${theme.size.radius.small};
+              font-weight: 600;
+              padding: 0 20px;
+              font-size: 10.5pt;
+              letter-spacing: 0.115em;
+              text-transform: uppercase;
             }
 
             :global(.homepage):not(.fixed) & :global(a) {
@@ -58,7 +63,8 @@ const Item = props => {
 
             :global(a:hover) {
               color: ${theme.color.brand.primary};
-              background: color(white alpha(-60%));
+              // background: color(white alpha(-60%));
+              opacity: 0.7;
             }
 
             :global(svg) {
