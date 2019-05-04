@@ -6,7 +6,7 @@ const Footer = props => {
 
   return (
     <React.Fragment>
-      <footer className="footer" dangerouslySetInnerHTML={{ __html: html }} />
+      {/* <footer className="footer" dangerouslySetInnerHTML={{ __html: html }} /> */}
 
       {/* --- STYLES --- */}
       <style jsx>{`
