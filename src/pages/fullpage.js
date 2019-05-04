@@ -4,6 +4,8 @@ import { graphql, StaticQuery, Link } from "gatsby"
 import ReactFullpage from '@fullpage/react-fullpage';
 import Image from "gatsby-image"
 
+import Container from "../components/Container"
+
 
 class IndexPage extends Component {
   render() {
@@ -35,13 +37,13 @@ class IndexPage extends Component {
               return (
                 <ReactFullpage.Wrapper>
                   <div className="section" style={{backgroundImage: 'linear-gradient(-90deg, red, yellow)'}}>
-                    <div>
+                    <Container>
                         <img width="200" src={data.allWordpressPost.edges[0].node.acf.logo.source_url} />
                         <p>{data.allWordpressPost.edges[0].node.acf.text}</p>
                         <div onClick={() => fullpageApi.moveSectionDown()}>
                             Next
                         </div>
-                    </div>
+                    </Container>
                   </div>
                   <div className="section">
                     <p>Section 2</p>
