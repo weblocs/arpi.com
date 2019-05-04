@@ -7,7 +7,8 @@ import { ScreenWidthContext, FontLoadedContext } from "../../layouts";
 import config from "../../../content/meta/config";
 import Menu from "../Menu";
 
-import avatar from "../../images/jpg/avatar.jpg";
+import Avatar from "!svg-react-loader!../../images/svg-icons/logo.svg?name=avatar";
+
 
 class Header extends React.Component {
   state = {
@@ -37,12 +38,8 @@ class Header extends React.Component {
       <React.Fragment>
         <header className={`header ${this.getHeaderSize()}`}>
           <Link to="/" className="logoType">
-            <div className="logo">
-              <img src={config.gravatarImgMd5=="" ? avatar : config.gravatarImgMd5 } alt={config.siteTitle} />
-            </div>
-            <div className="type">
-              <h1>{config.headerTitle}</h1>
-              <h2>{config.headerSubTitle}</h2>
+            <div className={`logo ${this.getHeaderSize()}`}>
+              <Avatar />
             </div>
           </Link>
           <FontLoadedContext.Consumer>
@@ -97,10 +94,23 @@ class Header extends React.Component {
             }
           }
 
+          .fixed {
+            .light {
+              display: none;
+            }
+          }
+
           h1 {
             font-size: ${theme.font.size.m};
             font-weight: ${theme.font.weight.standard};
             margin: ${theme.space.stack.xs};
+          }
+
+          h1.type-main {
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: none;
+            letter-spacing: 0.05em;
           }
 
           h2 {
@@ -111,22 +121,15 @@ class Header extends React.Component {
           }
 
           .logo {
-            border-radius: 65% 75%;
-            border: 1px solid #eee;
             display: inline-block;
-            height: 44px;
+            height: 38px;
+            width: 75px;
             margin: ${theme.space.inline.default};
             overflow: hidden;
-            width: 44px;
             transition: all 0.5s;
 
             .homepage & {
-              height: 60px;
-              width: 60px;
-            }
-
-            img {
-              width: 100%;
+              
             }
           }
 
@@ -218,10 +221,7 @@ class Header extends React.Component {
             .logo {
               margin: ${theme.space.inline.default};
 
-              .fixed & {
-                height: 36px;
-                width: 36px;
-              }
+              
 
               .header.homepage:not(.fixed) & {
                 border: none;
