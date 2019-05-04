@@ -22,6 +22,7 @@ class IndexPage extends Component {
                     excerpt
                     acf {
                         text
+                        gradient
                         logo {
                             source_url
                         }
@@ -36,18 +37,18 @@ class IndexPage extends Component {
             render={({ state, fullpageApi }) => {
               return (
                 <ReactFullpage.Wrapper>
-                  <div className="section" style={{backgroundImage: 'linear-gradient(-90deg, red, yellow)'}}>
-                    <Container>
-                        <img width="200" src={data.allWordpressPost.edges[0].node.acf.logo.source_url} />
-                        <p>{data.allWordpressPost.edges[0].node.acf.text}</p>
-                        <div onClick={() => fullpageApi.moveSectionDown()}>
-                            Next
+                    {data.allWordpressPost.edges.map((edge) => 
+                        <div className="section" style={{backgroundImage: edge.node.acf.gradient}}>
+                            <Container>
+                                <img width="200" src={edge.node.acf.logo.source_url} />
+                                <p>{edge.node.acf.text}</p>
+                                <div onClick={() => fullpageApi.moveSectionDown()}>
+                                    Next
+                                </div>
+                                
+                            </Container>
                         </div>
-                    </Container>
-                  </div>
-                  <div className="section">
-                    <p>Section 2</p>
-                  </div>
+                    )}
                 </ReactFullpage.Wrapper>
               );
             }}
