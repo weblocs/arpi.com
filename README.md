@@ -35,7 +35,6 @@ The original version of the starter is preserved as the branch `gatsby-v1`.
 - **Comments** (Facebook)
 - **Images** lazy loading and `webp` support (gatsby-image)
 - Post **categories** (category based post list)
-- Full text **searching** (Algolia)
 - **Contact** form (Netlify form handling)
 - Form elements and validation with `ant-design`
 - **RSS** feed
@@ -89,19 +88,10 @@ The starter uses external services for some functions: comments, searching, anal
 Create an `.env` file like below in the root folder. Change `...` placeholders with real data.
 <br />By default, your `.env` file will be ignored by git. Remove `.env` from `.gitignore` in order to be able to push the file to your repository.
 
-```text
-GOOGLE_ANALYTICS_ID=...
-ALGOLIA_APP_ID=...
-ALGOLIA_SEARCH_ONLY_API_KEY=...
-ALGOLIA_ADMIN_API_KEY=...
-ALGOLIA_INDEX_NAME=...
-FB_APP_ID=...
-```
 
 ### Instructions & tutorials
 
 - [How to install, setup and add new content to a Blog starter](https://dev.greglobinski.com/install-blog-starter/)
-- [Setup Algolia account for your GatsbyJS blog](https://dev.greglobinski.com/setup-algolia-account/)
 - More articles at [Front-end web development with Greg](https://dev.greglobinski.com/)
 
 ## Windows users

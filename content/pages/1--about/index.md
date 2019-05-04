@@ -13,7 +13,6 @@ This is a demo site of the [HeroBlog](https://github.com/greglobinski/gatsby-sta
 * **Comments** (Facebook)
 * **Images** lazy loading and `webp` support (gatsby-image)
 * Post **categories** (category based post list)
-* Full text **searching** (Algolia)
 * **Contact** form (Netlify form handling)
 * **RSS** feed
 * 100% **PWA** (manifest.webmanifest, offline support, favicons)
