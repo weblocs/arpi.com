@@ -43,10 +43,27 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        baseUrl: `dev-gatbsyjswp.pantheonsite.io`,
+        baseUrl: `http://serwer1901380.home.pl/arpi`,
         protocol: `http`,
         hostingWPCOM: false,
         useACF: true,
+        acfOptionPageIds: [],
+        perPage: 100,
+        concurrentRequests: 10,
+        includedRoutes: [
+          "**/categories",
+          "**/posts",
+          "**/pages",
+          "**/media",
+          "**/news",
+          "**/slider",
+        ],
+        // Blacklisted routes using glob patterns
+        excludedRoutes: ["**/posts/1456"],
+        // use a custom normalizer which is applied after the built-in ones.
+        normalizer: function({ entities }) {
+          return entities
+        },
       },
     },
     `gatsby-plugin-styled-jsx`, // the plugin's code is inserted directly to gatsby-node.js and gatsby-ssr.js files
