@@ -2,6 +2,10 @@ import React, { Component } from "react"
 import { graphql, StaticQuery, Link } from "gatsby"
 
 import ReactFullpage from '@fullpage/react-fullpage';
+import Image from "gatsby-image"
+
+import Container from "../components/Container"
+
 
 class IndexPage extends Component {
   render() {
@@ -16,6 +20,13 @@ class IndexPage extends Component {
                     slug
                     content
                     excerpt
+                    acf {
+                        text
+                        gradient
+                        logo {
+                            source_url
+                        }
+                    }
                   }
                 }
               }
@@ -26,15 +37,18 @@ class IndexPage extends Component {
             render={({ state, fullpageApi }) => {
               return (
                 <ReactFullpage.Wrapper>
-                  <div className="section" style={{background: 'blue'}}>
-                  <div>
-                    <h1>{data.allWordpressPost.edges[0].node.title}</h1>
-                    <h2>{data.allWordpressPost.edges[0].node.slug}</h2>
-                    </div>
-                  </div>
-                  <div className="section">
-                    <p>Section 2</p>
-                  </div>
+                    {data.allWordpressPost.edges.map((edge) => 
+                        <div className="section" style={{backgroundImage: edge.node.acf.gradient}}>
+                            <Container>
+                                <img width="200" src={edge.node.acf.logo.source_url} />
+                                <p>{edge.node.acf.text}</p>
+                                <div onClick={() => fullpageApi.moveSectionDown()}>
+                                    Next
+                                </div>
+                                
+                            </Container>
+                        </div>
+                    )}
                 </ReactFullpage.Wrapper>
               );
             }}

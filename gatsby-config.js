@@ -47,25 +47,21 @@ module.exports = {
         protocol: `http`,
         hostingWPCOM: false,
         useACF: true,
-        acfOptionPageIds: [],
-        perPage: 100,
+        //acfOptionPageIds: [],
+        perPage: 10,
         concurrentRequests: 10,
         includedRoutes: [
-          "**/categories",
           "**/posts",
           "**/pages",
           "**/media",
-          "**/news",
-          "**/slider",
         ],
-        // Blacklisted routes using glob patterns
-        excludedRoutes: ["**/posts/1456"],
         // use a custom normalizer which is applied after the built-in ones.
         normalizer: function({ entities }) {
           return entities
         },
       },
     },
+    `gatsby-plugin-sass`,
     `gatsby-plugin-styled-jsx`, // the plugin's code is inserted directly to gatsby-node.js and gatsby-ssr.js files
     `gatsby-plugin-styled-jsx-postcss`, // as above
     {
