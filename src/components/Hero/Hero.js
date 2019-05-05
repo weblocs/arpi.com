@@ -1,5 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "gatsby";
+
+import Container from "../Container"
 
 const Hero = props => {
   const { scrollToContent, backgrounds, theme } = props;
@@ -7,9 +10,14 @@ const Hero = props => {
   return (
     <React.Fragment>
       <section className="hero">
-        <h1>
-        Outsourcing solutions for your business.
-        </h1>
+        <Container>
+          <h1>
+          Outsourcing solutions for your business.
+          </h1>
+          <Link to='services'>
+            More about our services
+          </Link>
+        </Container>
         {/* <button onClick={scrollToContent} aria-label="scroll">
           <FaArrowDown />
         </button> */}
@@ -27,13 +35,9 @@ const Hero = props => {
           flex-flow: column nowrap;
           justify-content: center;
           min-height: 100vh;
-          height: 100px;
-          padding: ${theme.space.inset.l};
-          padding-top: ${theme.header.height.homepage};
         }
 
         h1 {
-          text-align: center;
           font-size: ${theme.hero.h1.size};
           margin: ${theme.space.stack.l};
           color: ${theme.hero.h1.color};

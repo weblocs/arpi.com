@@ -1,133 +1,49 @@
-import PropTypes from "prop-types";
-import React from "react";
-import { graphql } from "gatsby";
-import { ThemeContext } from "../layouts";
-import Blog from "../components/Blog";
-import Hero from "../components/Hero";
-import Seo from "../components/Seo";
-import Blocks from "../components/Blocks";
+import React, { Component } from "react";
+import { graphql, StaticQuery, Link } from "gatsby";
 
-class IndexPage extends React.Component {
-  separator = React.createRef();
+import Container from "../components/Container";
 
-  scrollToContent = e => {
-    this.separator.current.scrollIntoView({ block: "start", behavior: "smooth" });
-  };
-
+class IndexPage extends Component {
   render() {
-    const {
-      data: {
-        posts: { edges: posts = [] },
-        bgDesktop: {
-          resize: { src: desktop }
-        },
-        bgTablet: {
-          resize: { src: tablet }
-        },
-        bgMobile: {
-          resize: { src: mobile }
-        },
-        site: {
-          siteMetadata: { facebook }
-        }
-      }
-    } = this.props;
-
-    const backgrounds = {
-      desktop,
-      tablet,
-      mobile
-    };
-
     return (
-      <React.Fragment>
-        <ThemeContext.Consumer>
-          {theme => (
-            <Hero scrollToContent={this.scrollToContent} backgrounds={backgrounds} theme={theme} />
-          )}
-        </ThemeContext.Consumer>
-
-        
-
-        <Seo facebook={facebook} />
-
-        <style jsx>{`
-          hr {
-            margin: 0;
-            border: 0;
-          }
-        `}</style>
-      </React.Fragment>
-    );
-  }
-}
-
-IndexPage.propTypes = {
-  data: PropTypes.object.isRequired
-};
-
-export default IndexPage;
-
-
-//eslint-disable-next-line no-undef
-export const query = graphql`
-
-
-  query IndexQuery {
-
-    
-    
-    posts: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "//posts/[0-9]+.*--/" } }
-      sort: { fields: [fields___prefix], order: DESC }
-    ) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-            prefix
-          }
-          frontmatter {
-            title
-            category
-            author
-            cover {
-              children {
-                ... on ImageSharp {
-                  fluid(maxWidth: 800, maxHeight: 360) {
-                    ...GatsbyImageSharpFluid_withWebp
+      <StaticQuery
+        query={graphql`
+          query allIndexPageData {
+            allWordpressPage(sort: { fields: menu_order, order: ASC }) {
+              edges {
+                node {
+                  title
+                  slug
+                  acf {
+                    button
+                    link
                   }
                 }
               }
             }
           }
-        }
-      }
-    }
-    site {
-      siteMetadata {
-        facebook {
-          appId
-        }
-      }
-    }
-    bgDesktop: imageSharp(fluid: { originalName: { regex: "/aaa/" } }) {
-      resize(width: 1200, quality: 90, cropFocus: CENTER) {
-        src
-      }
-    }
-    bgTablet: imageSharp(fluid: { originalName: { regex: "/hero-background/" } }) {
-      resize(width: 800, height: 1100, quality: 90, cropFocus: CENTER) {
-        src
-      }
-    }
-    bgMobile: imageSharp(fluid: { originalName: { regex: "/hero-background/" } }) {
-      resize(width: 450, height: 850, quality: 90, cropFocus: CENTER) {
-        src
-      }
-    }
-  }
-`;
+        `}
+        render={data => (
+          <div className="mainSection">
+            <Container>
+              <p>{data.allWordpressPage.edges[0].node.title}</p>
+              <Link to={data.allWordpressPage.edges[0].node.acf.link}>
+                {data.allWordpressPage.edges[0].node.acf.button}
+              </Link>
+            </Container>
 
-//hero-background
+            <style jsx>{`
+              .mainSection {
+                height: 100vh;
+                display: flex;
+                align-items: center;
+              }
+            `}</style>
+          </div>
+        )}
+      />
+    );
+  }
+}
+
+export default IndexPage;
