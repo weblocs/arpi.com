@@ -34,8 +34,10 @@ class IndexPage extends Component {
           `}
           render={data => (
             <ReactFullpage
+            navigation
             render={({ state, fullpageApi }) => {
               return (
+                <div>
                 <ReactFullpage.Wrapper>
                     {data.allWordpressPost.edges.map((edge) => 
                         <div className="section" style={{backgroundImage: edge.node.acf.gradient}}>
@@ -49,7 +51,14 @@ class IndexPage extends Component {
                             </Container>
                         </div>
                     )}
+                    
                 </ReactFullpage.Wrapper>
+                <style jsx>{`
+                #fp-nav.fp-right {
+                left: 18px;
+                }
+            `}</style>
+            </div>
               );
             }}
           />
