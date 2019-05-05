@@ -128,7 +128,7 @@ class Layout extends React.Component {
                     {/* --- STYLES --- */}
                     <style jsx>{`
                       main {
-                        min-height: 80vh;
+                        min-height: 100vh;
                       }
                     `}</style>
                     <style jsx global>{`
