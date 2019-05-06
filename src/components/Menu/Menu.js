@@ -25,10 +25,13 @@ class Menu extends React.Component {
 
     this.items = [
       { label: "Browse services", 
-      subitems: [ {text: 'Bemanning', link:'bemanning'}, {text: 'Regnskap', link:'regnskap'}, {text: 'Network', link:'network'}, {text: 'Staffing', link:'staffing'}, {text: 'Accounting', link: 'accounting'}, {text:'Aviation', link:'aviation'} ] },
+      subitems: [ {text: 'Bemanning', link:'/services/#bemanning'}, {text: 'Regnskap', link:'/services/#regnskap'}, {text: 'Network', link:'/services/#network'}, {text: 'Staffing', link:'/services/#staffing'}, {text: 'Accounting', link: '/services/#accounting'}, {text:'Aviation', link:'/services/#aviation'} ] },
       
       // ...pages,
-      { to: "/contact/", label: "Kontakt" }
+      { to: "/contact/", label: "Contact" },
+      { label: "Languages", 
+      subitems: [ {text: 'Polish', link:'/pl'}, {text: 'English', link: '/'}, {text:'Norwegian', link:'/nb'} ] },
+      
     ];
 
     this.renderedItems = []; // will contain references to rendered DOM elements of menu

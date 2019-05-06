@@ -8,7 +8,7 @@ import config from "../../../content/meta/config";
 import Menu from "../Menu";
 
 
-import Avatar from "!svg-react-loader!../../images/svg-icons/logo-arpi.svg?name=avatar";
+import Avatar from "../../images/svg-icons/logo.svg";
 
 
 class Header extends React.Component {

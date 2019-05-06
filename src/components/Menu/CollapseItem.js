@@ -42,7 +42,7 @@ class CollapseItem extends Component {
                 
                     <ul className={`${this.state.isActive ? 'active' : ''} ${this.state.isHide ? 'hide' : '' }`}>
                         {subitems.map(item => (
-                            <li><a href={'/services/#' + item.link }>{item.text}</a></li>
+                            <li><a href={item.link}>{item.text}</a></li>
                         ))}
                     </ul>
             </li>
@@ -130,6 +130,7 @@ class CollapseItem extends Component {
                     font-weight: 600;
                     padding: 0 20px;
                     font-size: 14px;
+                    margin-bottom: 5px;
                     }
 
                     :global(.homepage):not(.fixed) & :global(a) {
