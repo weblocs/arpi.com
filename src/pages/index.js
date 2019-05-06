@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { graphql, StaticQuery, Link } from "gatsby";
 
+import Arrow from "../images/svg-icons/arrow-right-gray.svg";
 import Container from "../components/Container";
 
 class IndexPage extends Component {
@@ -27,8 +28,9 @@ class IndexPage extends Component {
           <div className="mainSection">
             <Container>
               <p>{data.allWordpressPage.edges[0].node.title}</p>
-              <Link to={data.allWordpressPage.edges[0].node.acf.link}>
-                {data.allWordpressPage.edges[0].node.acf.button}
+              
+              <Link className="slideButton" to={data.allWordpressPage.edges[0].node.acf.link}>
+                <div className="textGray">{data.allWordpressPage.edges[0].node.acf.button}</div> <Arrow /> 
               </Link>
             </Container>
 
@@ -37,7 +39,20 @@ class IndexPage extends Component {
                 height: 100vh;
                 display: flex;
                 align-items: center;
+                
+                
+                p {
+                  color: #434343;
+                  line-height: 66px;
+                  font-weight: 400;
+                  font-size: 64px;
+                  max-width: 673px;
+                  letter-spacing: 0.045em;
+                  margin-bottom: 40px;  
+                  margin-top: 100px;
+                }
               }
+              
             `}</style>
           </div>
         )}
