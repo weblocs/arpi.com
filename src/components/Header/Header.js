@@ -7,7 +7,8 @@ import { ScreenWidthContext, FontLoadedContext } from "../../layouts";
 import config from "../../../content/meta/config";
 import Menu from "../Menu";
 
-import Avatar from "!svg-react-loader!../../images/svg-icons/logo.svg?name=avatar";
+
+import Avatar from "!svg-react-loader!../../images/svg-icons/logo-arpi.svg?name=avatar";
 
 
 class Header extends React.Component {
@@ -36,42 +37,51 @@ class Header extends React.Component {
 
     return (
       <React.Fragment>
-        <header className={`header ${this.getHeaderSize()}`}>
-          <Link to="/" className="logoType">
-            <div className={`logo ${this.getHeaderSize()}`}>
-              <Avatar />
-            </div>
-          </Link>
-          <FontLoadedContext.Consumer>
-            {loaded => (
-              <ScreenWidthContext.Consumer>
-                {width => (
-                  <Menu
-                    path={path}
-                    fixed={fixed}
-                    screenWidth={width}
-                    fontLoaded={loaded}
-                    pages={pages}
-                    theme={theme}
-                  />
-                )}
-              </ScreenWidthContext.Consumer>
-            )}
-          </FontLoadedContext.Consumer>
-        </header>
+        <div className="headerBox">
+          <header className={`header ${this.getHeaderSize()}`}>
+            <Link to="/" className="logoType">
+              <div className={`logo ${this.getHeaderSize()}`}>
+                <Avatar />
+              </div>
+            </Link>
+            <FontLoadedContext.Consumer>
+              {loaded => (
+                <ScreenWidthContext.Consumer>
+                  {width => (
+                    <Menu
+                      path={path}
+                      fixed={fixed}
+                      screenWidth={width}
+                      fontLoaded={loaded}
+                      pages={pages}
+                      theme={theme}
+                    />
+                  )}
+                </ScreenWidthContext.Consumer>
+              )}
+            </FontLoadedContext.Consumer>
+          </header>
+        </div>
         <VisibilitySensor onChange={this.visibilitySensorChange}>
           <div className="sensor" />
         </VisibilitySensor>
 
         {/* --- STYLES --- */}
         <style jsx>{`
+        .headerBox {
+          width: 100%;
+        }
           .header {
             align-items: center;
             justify-content: center;
             background-color: ${theme.color.neutral.white};
             display: flex;
-            height: ${theme.header.height.default};
-            position: relative;
+            height: 200px;
+            max-width: 1200px;
+            margin-left: auto;
+            argin-right: auto;
+            position: fixed;
+            z-index: 0;
             top: 0;
             width: 100%;
             align-items: center;
@@ -88,6 +98,7 @@ class Header extends React.Component {
             }
 
             &.homepage {
+              z-index: 1;
               position: absolute;
               background-color: transparent;
               height: ${theme.header.height.homepage};
@@ -122,8 +133,8 @@ class Header extends React.Component {
 
           .logo {
             display: inline-block;
-            height: 38px;
-            width: 75px;
+            height: 100px;
+            width: 200px;
             margin: ${theme.space.inline.default};
             overflow: hidden;
             transition: all 0.5s;
@@ -148,9 +159,14 @@ class Header extends React.Component {
             .header {
               padding: ${theme.space.inset.l};
 
-              &.homepage {
-                height: ${theme.header.height.homepage};
-              }
+              background: transparent;
+                height: 200px !important;
+                padding: 0;
+                position: absolute;
+                margin: auto;
+                left: 50%;
+                transform: translateX(-50%);
+              
             }
           }
 
