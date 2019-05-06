@@ -123,15 +123,13 @@ class CollapseItem extends Component {
                 @from-width desktop {
                 .item {
                     :global(a) {
-                    color: ${theme.color.neutral.white};
+                    color: #434343;
                     padding: ${theme.space.inset.s};
                     transition: all ${theme.time.duration.default};
                     border-radius: ${theme.size.radius.small};
                     font-weight: 600;
                     padding: 0 20px;
-                    font-size: 10.5pt;
-                    letter-spacing: 0.115em;
-                    text-transform: uppercase;
+                    font-size: 14px;
                     }
 
                     :global(.homepage):not(.fixed) & :global(a) {

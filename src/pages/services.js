@@ -24,6 +24,8 @@ class IndexPage extends Component {
                     </Container>
                   </div>
 
+        
+
                   
       
       <StaticQuery
@@ -68,6 +70,7 @@ class IndexPage extends Component {
                             <div className="slideContentItem">
                               <img width="196" src={edge.node.acf.logo.source_url} />
                               <p>{edge.node.acf.text}</p>
+                              <p>{edge.node.lang}</p>
                               <div
                                 className="slideButton"
                                 onClick={() => fullpageApi.moveSectionDown()}

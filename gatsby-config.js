@@ -54,6 +54,7 @@ module.exports = {
           "**/posts",
           "**/pages",
           "**/media",
+          "**/language",
         ],
         // use a custom normalizer which is applied after the built-in ones.
         normalizer: function({ entities }) {

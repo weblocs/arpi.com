@@ -4,6 +4,8 @@ import { graphql, StaticQuery, Link } from "gatsby";
 import Arrow from "../images/svg-icons/arrow-right-gray.svg";
 import Container from "../components/Container";
 
+import ColorBar from "../images/svg-icons/colors.svg"
+
 class IndexPage extends Component {
   render() {
     return (
@@ -34,7 +36,21 @@ class IndexPage extends Component {
               </Link>
             </Container>
 
+            <div className="bottomColors">
+              <ColorBar />
+            </div>
+
             <style jsx>{`
+
+            .bottomColors {
+              position: fixed;
+              bottom: 0;
+              display: inherit;
+              width: 100%;
+              svg {
+                width: 100%;
+              }
+            }
               .mainSection {
                 height: 100vh;
                 display: flex;
