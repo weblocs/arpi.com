@@ -191,16 +191,39 @@ class Layout extends React.Component {
                         
                     }
 
+                    iframe {
+                      border: 0;
+                    }
+                    @media(min-width: 1200px) {
                     #fp-nav.fp-right {
                       left: 40px;
                       width: 28px;
                     }
+                    }
+                    @media(max-width: 1199px) {
+                      #fp-nav.fp-right {
+                        right: 40px;
+                        top: calc(100% - 100px);
+                        width: 28px;
+                      }
+                    }
+
+                    @media(max-width:800px) {
+                      .logotype {
+                        width: 100px;
+                        position: absolute;
+                        left: 15px;
+                        top: 15px;
+                      }
+                    }
+
+
                     #fp-nav ul li a span {
                       background: #fff !important;
                       height: 8px !important;
                       width: 8px !important;
                       margin: -4px 0 0 -4px !important;
-                      opacity: 0.6 !important;
+                      opacity: 0.3 !important;
                     }
                     #fp-nav ul li:hover a.active span, #fp-nav ul li a.active span, .fp-slidesNav ul li:hover a.active span, .fp-slidesNav ul li a.active span {
                       opacity: 1 !important;

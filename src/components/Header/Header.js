@@ -41,7 +41,7 @@ class Header extends React.Component {
           <header className={`header ${this.getHeaderSize()}`}>
             <Link to="/" className="logoType">
               <div className={`logo ${this.getHeaderSize()}`}>
-                <Avatar />
+                <Avatar className="logotype" />
               </div>
             </Link>
             <FontLoadedContext.Consumer>
@@ -68,6 +68,7 @@ class Header extends React.Component {
 
         {/* --- STYLES --- */}
         <style jsx>{`
+        
         .headerBox {
           width: 100%;
         }

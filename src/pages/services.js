@@ -74,17 +74,22 @@ class IndexPage extends Component {
                             <Container>
                               <div className="slideContent">
                                 <div className="slideContentItem">
-                                  <img width="196" src={edge.node.acf.logo.source_url} />
+                                  <img className="logo" src={edge.node.acf.logo.source_url} />
                                   <p>{edge.node.acf.text}</p>
                                   <p>{edge.node.lang}</p>
+                                  <div className="proceed mobileOnly">
+                                    <a href={edge.node.acf.link} target="_blank">
+                                      <div className="proceedText">Proceed</div> <Arrow />
+                                    </a>
+                                  </div>
                                   <div
-                                    className="slideButton"
+                                    className="slideButton next"
                                     onClick={() => fullpageApi.moveSectionDown()}
                                   >
                                     <div>Next</div> <Arrow />
                                   </div>
                                 </div>
-                                <div className="slideContentItem">
+                                <div className="slideContentItem desktopOnly">
                                   <div className="proceed">
                                     <a href={edge.node.acf.link} target="_blank">
                                       <div className="proceedText">Proceed</div> <Arrow />
@@ -103,11 +108,26 @@ class IndexPage extends Component {
           )}
         />
         <style jsx>{`
+
+        .logo {
+          width: 198px;
+          @media(max-width: 1000px) {
+            width:145px;
+          }
+        }
+          .mobileOnly {
+            display: none;
+          }
+          
           .slideContent {
             display: flex;
             align-items: center;
             .slideContentItem {
               width: 50%;
+
+              @media(max-width: 800px) {
+                width: 100%;
+              }
 
               .proceedText {
                 font-size: 26px;
@@ -163,6 +183,21 @@ class IndexPage extends Component {
             left: 0;
             z-index: 3;
             width: 100%;
+          }
+          @media(max-width: 800px) {
+            .proceed {
+              float: none !important;
+            }
+            .desktopOnly {
+              display: none;
+            }
+            .mobileOnly {
+              display: block;
+            }
+            .next {
+              position: absolute;
+              bottom: 30px;
+            }
           }
         `}</style>
       </div>

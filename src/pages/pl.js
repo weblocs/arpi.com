@@ -9,7 +9,7 @@ class IndexPage extends Component {
     return (
       <StaticQuery
         query={graphql`
-          query allIndexPageData {
+          query allIndexPlPageData {
             allWordpressPage(sort: { fields: menu_order, order: ASC }) {
               edges {
                 node {
@@ -30,7 +30,7 @@ class IndexPage extends Component {
               <p>{data.allWordpressPage.edges[0].node.title}</p>
               
               <Link className="slideButton" to={data.allWordpressPage.edges[0].node.acf.link}>
-                <div className="textGray">{data.allWordpressPage.edges[0].node.acf.button}</div> <Arrow /> 
+                <div className="textGray">Więcej o naszych usługach</div> <Arrow /> 
               </Link>
             </Container>
 
@@ -73,8 +73,6 @@ class IndexPage extends Component {
                 height: 100vh;
                 display: flex;
                 align-items: center;
-
-                
                 
                 
                 p {
@@ -86,12 +84,6 @@ class IndexPage extends Component {
                   letter-spacing: 0.045em;
                   margin-bottom: 40px;  
                   margin-top: 100px;
-                  @media(max-width: 800px) {
-                    line-height: 44px;
-                    font-size: 40px;
-                    max-width: 263px;
-                    margin-top: 180px;
-                  }
                 }
               }
               
