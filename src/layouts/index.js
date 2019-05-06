@@ -190,6 +190,44 @@ class Layout extends React.Component {
                         }
                         
                     }
+
+                    #fp-nav.fp-right {
+                      left: 40px;
+                      width: 28px;
+                    }
+                    #fp-nav ul li a span {
+                      background: #fff;
+                      height: 8px;
+                      width: 8px;
+                      margin: -4px 0 0 -4px;
+                      opacity: 0.6;
+                    }
+                    #fp-nav ul li:hover a.active span, #fp-nav ul li a.active span, .fp-slidesNav ul li:hover a.active span, .fp-slidesNav ul li a.active span {
+                      opacity: 1;
+                      height: 8px;
+                      width: 8px;
+                      margin: -4px 0 0 -4px;
+                    }
+                    .slideButton {
+                      display: flex;
+                      align-items: center;
+                      font-size: 14px;
+                      color: #fff;
+                      line-height: 41px;
+                      font-weight: 700;
+                      opacity: 0.6;
+                      letter-spacing: 0.03em;
+                      transition: .2s;
+                      cursor: pointer;
+                      :hover {
+                        opacity: 1;
+                      }
+                      .textGray {
+                        color: #434343;
+                        margin-right: 15px;
+                        display: inline-block;
+                      }
+                    }
                     `}</style>
                   </React.Fragment>
                 </ScreenWidthContext.Provider>
