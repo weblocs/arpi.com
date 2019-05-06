@@ -196,17 +196,17 @@ class Layout extends React.Component {
                       width: 28px;
                     }
                     #fp-nav ul li a span {
-                      background: #fff;
-                      height: 8px;
-                      width: 8px;
-                      margin: -4px 0 0 -4px;
-                      opacity: 0.6;
+                      background: #fff !important;
+                      height: 8px !important;
+                      width: 8px !important;
+                      margin: -4px 0 0 -4px !important;
+                      opacity: 0.6 !important;
                     }
                     #fp-nav ul li:hover a.active span, #fp-nav ul li a.active span, .fp-slidesNav ul li:hover a.active span, .fp-slidesNav ul li a.active span {
-                      opacity: 1;
-                      height: 8px;
-                      width: 8px;
-                      margin: -4px 0 0 -4px;
+                      opacity: 1 !important;
+                      height: 8px !important;
+                      width: 8px !important;
+                      margin: -4px 0 0 -4px !important;
                     }
                     .slideButton {
                       display: flex;

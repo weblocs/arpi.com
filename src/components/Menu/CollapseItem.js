@@ -38,7 +38,7 @@ class CollapseItem extends Component {
         return (
             <React.Fragment>
             <li className={"hiddenItem" in this.props ? "hiddenItem" : "collapseItem"} key={label}>
-                <span onClick={this.toggleList}>{label}</span>
+                <span onClick={this.toggleList}>{label}</span> 
                 
                     <ul className={`${this.state.isActive ? 'active' : ''} ${this.state.isHide ? 'hide' : '' }`}>
                         {subitems.map(item => (
