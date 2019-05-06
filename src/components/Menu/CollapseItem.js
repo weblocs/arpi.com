@@ -42,7 +42,7 @@ class CollapseItem extends Component {
                 
                     <ul className={`${this.state.isActive ? 'active' : ''} ${this.state.isHide ? 'hide' : '' }`}>
                         {subitems.map(item => (
-                            <li>{item}</li>
+                            <li><a href={'/services/#' + item.link }>{item.text}</a></li>
                         ))}
                     </ul>
             </li>
@@ -52,11 +52,23 @@ class CollapseItem extends Component {
             .collapseItem {
                 
                     :global(span) {
-                    color: ${theme.color.neutral.white};
+                        color: #434343;
+                        font-size: 14px;
+                        font-weight: 600;
+                        padding: 0 20px;
+                        transition: .2s;
                     }
 
                     :global(.homepage):not(.fixed) & :global(span) {
-                    color: ${theme.color.neutral.black};
+                    color: #434343;
+                    font-size: 14px;
+                    font-weight: 600;
+                    padding: 0 20px;
+                    transition: .2s;
+
+                    }
+                    :hover {
+                        opacity: .7;
                     }
                     
                 span {
