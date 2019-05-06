@@ -1,6 +1,10 @@
-.container {
-    display: block;
+.containerBox {
     width: 100%;
-    max-width: 1200px;
-    margin: auto;
+
+    .container {
+        display: block;
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+    }
 }

@@ -7,10 +7,11 @@ import PropTypes from "prop-types"
 import styles from "./Container.module.scss"
 
 const Container = ({ children }) => (
-  
+    <div className={styles.containerBox}>
       <section className={styles.container}>
         {children}
       </section>
+    </div>
 )
 
 Container.propTypes = {
