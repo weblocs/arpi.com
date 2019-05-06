@@ -25,9 +25,8 @@ class Menu extends React.Component {
 
     this.items = [
       { label: "Browse services", 
-      subitems: [ 'Bemanning', 'Regnskap', 'Network', 'Staffing', 'Accounting', 'Aviation' ] },
-      { to: "/category/", label: "Dlaczego my" },
-      { to: "/search/", label: "Co oferujemy" },
+      subitems: [ {text: 'Bemanning', link:'bemanning'}, {text: 'Regnskap', link:'regnskap'}, {text: 'Network', link:'network'}, {text: 'Staffing', link:'staffing'}, {text: 'Accounting', link: 'accounting'}, {text:'Aviation', link:'aviation'} ] },
+      
       // ...pages,
       { to: "/contact/", label: "Kontakt" }
     ];
@@ -163,6 +162,7 @@ class Menu extends React.Component {
                 {this.state.hiddenItems.map(item => (
                   <Item item={item} key={item.label} hiddenItem theme={theme} />
                 ))}
+                
               </ul>
             )}
         </nav>
