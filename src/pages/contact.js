@@ -26,7 +26,7 @@ const ContactPage = props => {
             <div>
               <Link to="/">
                 <div className="linkBox linkBoxMobile">
-                  <div className="link" >Go back home</div> <span className="rotateDown"><Arrow /> </span>
+                  <div className="link" >Go back home</div> <span className="rotateUp"><Arrow /> </span>
                 </div>
               </Link>
             </div>
@@ -55,6 +55,8 @@ const ContactPage = props => {
 
       <Seo facebook={facebook} />
       <style jsx>{`
+      
+      
       .backHome {
         position:fixed;
         bottom: 0;
@@ -63,6 +65,12 @@ const ContactPage = props => {
       }
       .rotateDown {
         transform: rotate(90deg);
+      }
+      .rotateUp {
+        display: inline-block;
+        transform: rotate(-90deg);
+        position: relative;
+        left: 1px;
       }
       h1 {
         font-size: 64px;
