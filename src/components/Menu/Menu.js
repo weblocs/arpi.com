@@ -11,6 +11,9 @@ import Item from "./Item";
 import CollapseItem from "./CollapseItem";
 import Expand from "./Expand";
 
+import Facebook from "../../images/svg-icons/facebook.svg";
+import Linkedin from "../../images/svg-icons/linkedin.svg";
+
 class Menu extends React.Component {
   constructor(props) {
     super(props);
@@ -75,7 +78,7 @@ class Menu extends React.Component {
   };
 
   hideOverflowedMenuItems = () => {
-    const PADDING_AND_SPACE_FOR_MORELINK = this.props.screenWidth >= 1024 ? 60 : 0;
+    const PADDING_AND_SPACE_FOR_MORELINK = this.props.screenWidth >= 601 ? 60 : 0;
 
     const itemsContainer = this.itemList.current;
     const maxWidth = itemsContainer.offsetWidth - PADDING_AND_SPACE_FOR_MORELINK;
@@ -95,10 +98,6 @@ class Menu extends React.Component {
 
           item.classList.add("hideItem");
           item.classList.remove("item");
-          result.hiddenItems.push({
-            to: link.getAttribute("data-slug"),
-            label: link.text
-          });
         }
         return result;
       },
@@ -111,7 +110,7 @@ class Menu extends React.Component {
   toggleMenu = e => {
     e.preventDefault();
 
-    if (this.props.screenWidth < 1024) {
+    if (this.props.screenWidth < 601) {
       this.renderedItems.map(item => {
         const oldClass = this.state.open ? "showItem" : "hideItem";
         const newClass = this.state.open ? "hideItem" : "showItem";
@@ -131,7 +130,7 @@ class Menu extends React.Component {
 
     if (this.state.open) {
       this.setState({ open: false });
-      if (this.props.screenWidth < 1024) {
+      if (this.props.screenWidth < 601) {
         this.renderedItems.map(item => {
           if (item.classList.contains("showItem")) {
             item.classList.add("hideItem");
@@ -157,10 +156,17 @@ class Menu extends React.Component {
                 <CollapseItem item={{ label: item.label, subitems: item.subitems }}  theme={theme} />
                 :  <Item item={{to: item.to, label: item.label}} theme={theme} />
               ))}
+              
+              <a target="_blank" href="https://www.facebook.com/ArpiGroup/">
+              <span className="socialIcon"><Facebook /></span>
+              </a>
+              <a target="_blank" href="https://pl.linkedin.com/company/arpi-group">
+              <span className="socialIcon"><Linkedin /></span>
+              </a>
           </ul>
           {this.state.hiddenItems.length > 0 && <Expand onClick={this.toggleMenu} theme={theme} />}
           {open &&
-            screenWidth >= 1024 && (
+            screenWidth >= 601 && (
               <ul className="hiddenItemList">
                 {this.state.hiddenItems.map(item => (
                   <Item item={item} key={item.label} hiddenItem theme={theme} />
@@ -185,6 +191,15 @@ class Menu extends React.Component {
             width: 100%;
             z-index: 1;
             transition: all ${theme.time.duration.default};
+          }
+
+          .socialIcon {
+            margin-left: 20px;
+            opacity: 0.6;
+            transition: .2s;
+            :hover {
+              opacity: 1;
+            }
           }
 
           .itemList {

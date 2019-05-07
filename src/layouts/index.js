@@ -212,8 +212,8 @@ class Layout extends React.Component {
                       .logotype {
                         width: 100px;
                         position: absolute;
-                        left: 15px;
-                        top: 15px;
+                        left: 40px;
+                        top: 5px;
                       }
                     }
 
@@ -251,6 +251,24 @@ class Layout extends React.Component {
                         display: inline-block;
                       }
                     }
+                    @media(max-width:1024px) {
+                      nav.menu {
+                        top: 0;
+                        background: transparent !important;
+                        ul {
+                          justify-content: flex-end !important;
+                        }
+                        ::after {
+                          display: none;
+                        }
+                      }
+                    }
+                    @media(max-width:800px) {
+                      nav.menu {
+                        top: -570px;
+                      }
+                    }
+
                     `}</style>
                   </React.Fragment>
                 </ScreenWidthContext.Provider>

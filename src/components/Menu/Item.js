@@ -22,6 +22,26 @@ const Item = props => {
       <style jsx>{`
         .item,
         .showItem {
+          
+            :global(a) {
+              color: #434343;
+              padding: ${theme.space.inset.s};
+              transition: all ${theme.time.duration.default};
+              border-radius: ${theme.size.radius.small};
+              font-weight: 600;
+              padding: 0 20px;
+              font-size: 14px;
+            }
+
+            :global(.homepage):not(.fixed) & :global(a) {
+              color: #434343;
+              padding: ${theme.space.inset.s};
+              transition: all ${theme.time.duration.default};
+              border-radius: ${theme.size.radius.small};
+              font-weight: 600;
+              padding: 0 20px;
+              font-size: 14px;
+            }
           background: transparent;
           transition: all ${theme.time.duration.default};
           display: flex;

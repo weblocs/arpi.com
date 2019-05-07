@@ -3,6 +3,7 @@ import { graphql, StaticQuery, Link } from "gatsby";
 
 import Arrow from "../images/svg-icons/arrow-right-gray.svg";
 import Container from "../components/Container";
+import Hamburger from "../components/Menu/Hamburger";
 
 class IndexPage extends Component {
   render() {
@@ -26,6 +27,7 @@ class IndexPage extends Component {
         `}
         render={data => (
           <div className="mainSection">
+            <Hamburger />
             <Container>
               <p>{data.allWordpressPage.edges[0].node.title}</p>
               

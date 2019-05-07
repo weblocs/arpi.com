@@ -3,7 +3,7 @@ module.exports = ctx => ({
     "postcss-easy-media-query": {
       breakpoints: {
         tablet: 600,
-        desktop: 1024
+        desktop: 601
       }
     },
     "postcss-text-remove-gap": {

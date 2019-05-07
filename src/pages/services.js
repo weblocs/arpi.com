@@ -16,7 +16,7 @@ class IndexPage extends Component {
           <Container>
             <Link to="/">
               <div className="slideButton">
-                <div>Go back home</div> <Arrow />
+                <div>Go back home</div> <span className="rotateUp"><Arrow /></span>
               </div>
             </Link>
           </Container>
@@ -66,7 +66,7 @@ class IndexPage extends Component {
                     <ReactFullpage.Wrapper>
                       {data.allWordpressPost.edges
                         .filter(edge => edge.node.language == "2")
-                        .map(edge => (
+                        .map((edge, i, arr) => (
                           <div
                             className="section fullpageSlide"
                             style={{ backgroundImage: edge.node.acf.gradient }}
@@ -82,11 +82,13 @@ class IndexPage extends Component {
                                       <div className="proceedText">Proceed</div> <Arrow />
                                     </a>
                                   </div>
-                                  <div
-                                    className="slideButton next"
-                                    onClick={() => fullpageApi.moveSectionDown()}
-                                  >
-                                    <div>Next</div> <Arrow />
+                                  <div className={arr.length - 1 === i ? 'last' : ''}>
+                                    <div
+                                      className="slideButton next"
+                                      onClick={() => fullpageApi.moveSectionDown()}
+                                    >
+                                      <div>Next</div> <span className="rotateDown"><Arrow /></span>
+                                    </div>
                                   </div>
                                 </div>
                                 <div className="slideContentItem desktopOnly">
@@ -108,6 +110,20 @@ class IndexPage extends Component {
           )}
         />
         <style jsx>{`
+
+        .last {
+          display: none;
+        }
+
+        .rotateDown {
+          transform: rotate(90deg);
+        }
+
+        .rotateUp {
+          transform: rotate(-90deg);
+          position: relative;
+          left: 1px;
+        }
 
         .logo {
           width: 198px;

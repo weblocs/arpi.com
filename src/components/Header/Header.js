@@ -42,6 +42,7 @@ class Header extends React.Component {
             <Link to="/" className="logoType">
               <div className={`logo ${this.getHeaderSize()}`}>
                 <Avatar className="logotype" />
+
               </div>
             </Link>
             <FontLoadedContext.Consumer>
@@ -75,10 +76,11 @@ class Header extends React.Component {
           .header {
             align-items: center;
             justify-content: center;
-            background-color: ${theme.color.neutral.white};
+            background-color: transparent;
             display: flex;
             height: 200px;
             max-width: 1200px;
+            padding: 0 20px !important;
             margin-left: auto;
             argin-right: auto;
             position: fixed;
@@ -86,6 +88,7 @@ class Header extends React.Component {
             top: 0;
             width: 100%;
             align-items: center;
+
 
             :global(a.logoType) {
               align-items: center;
