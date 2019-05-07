@@ -17,6 +17,7 @@ export const FontLoadedContext = React.createContext(false);
 import themeObjectFromYaml from "../theme/theme.yaml";
 
 class Layout extends React.Component {
+  
   constructor() {
     super();
 
@@ -125,7 +126,7 @@ class Layout extends React.Component {
                     <main>{children}</main>
                     <Footer html={footnoteHTML} theme={this.state.theme} />
 
-                    <Seo facebook={facebook} />
+                    <Seo />
                     {/* --- STYLES --- */}
                     <style jsx>{`
                       main {
