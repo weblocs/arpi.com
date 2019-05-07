@@ -23,7 +23,7 @@ const Seo = props => {
       }}
     >
       {/* General tags */}
-      <title>{title}</title>
+      <title>ARPI Group</title>
       <meta name="description" content={description} />
       {/* OpenGraph tags */}
       <meta property="og:url" content={url} />
