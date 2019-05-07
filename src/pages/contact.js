@@ -23,6 +23,13 @@ const ContactPage = props => {
         {theme => (
           <div className="contactForm">
           <Container>
+            <div>
+              <Link to="/">
+                <div className="linkBox linkBoxMobile">
+                  <div className="link" >Go back home</div> <span className="rotateDown"><Arrow /> </span>
+                </div>
+              </Link>
+            </div>
             <header>
               <h1>drop us a line</h1>
               <p>Describe briefly what kind of assistance can we provide</p>
@@ -30,13 +37,14 @@ const ContactPage = props => {
             <div className="resp-container">
                 <iframe className="resp-iframe" src="https://arpistaffing.com/email/contact-form/"></iframe>
             </div>
-            <div>
+            <div className="backHome">
+              <Container>
               <Link to="/">
                 <div className="linkBox">
-                  <div className="link" >Go back home</div> <Arrow /> 
+                  <div className="link" >Go back home</div> <span className="rotateDown"><Arrow /> </span>
                 </div>
               </Link>
-
+              </Container>
             </div>
             
             
@@ -47,6 +55,15 @@ const ContactPage = props => {
 
       <Seo facebook={facebook} />
       <style jsx>{`
+      .backHome {
+        position:fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+      .rotateDown {
+        transform: rotate(90deg);
+      }
       h1 {
         font-size: 64px;
         line-height: 66px;
@@ -71,8 +88,18 @@ const ContactPage = props => {
         transition: .2s;
         opacity: 0.6;
         margin-bottom: 50px;
+        @media(max-width:800px) {
+          display: none;
+        }
         :hover {
           opacity: 1;
+        }
+        &.linkBoxMobile {
+          margin-top:50px;
+          display: block;
+          @media(min-width:800px) {
+            display: none;
+          }
         }
       }
       .link {
@@ -98,7 +125,7 @@ const ContactPage = props => {
       .resp-container {
         position: relative;
         overflow: hidden;
-        height: 600px;
+        height: 700px;
     }
     .resp-iframe {
       position: absolute;

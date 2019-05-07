@@ -17,10 +17,11 @@ const Hamburger = props => {
         .hamburger {
             @media(max-width: 800px) {
                 position: fixed;
-                top: 45px;
+                top: 25px;
                 cursor:pointer;
                 z-index:3;
-                right: 40px;
+                right: 20px;
+                padding: 20px;
                 span {
                     display: block;
                     position: relative;
