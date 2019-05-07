@@ -109,6 +109,8 @@ class IndexPage extends Component {
             />
           )}
         />
+
+<Seo facebook={facebook} />
         <style jsx>{`
 
         .last {
