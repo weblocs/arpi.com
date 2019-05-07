@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import Arrow from "../../images/svg-icons/arrow-small.svg";
 
 class CollapseMobileItem extends Component {
   constructor(props) {
