@@ -3,8 +3,6 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import { ThemeContext } from "../layouts";
 import Container from "../components/Container";
-import Contact from "../components/Contact";
-import Headline from "../components/Article/Headline";
 import Seo from "../components/Seo";
 import Arrow from "../images/svg-icons/arrow-right-gray.svg";
 
