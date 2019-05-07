@@ -92,7 +92,7 @@ class IndexPage extends Component {
                     line-height: 44px;
                     font-size: 40px;
                     max-width: 263px;
-                    margin-top: 180px;
+                    margin-top: 0px;
                   }
                 }
               }

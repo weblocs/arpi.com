@@ -191,6 +191,13 @@ class IndexPage extends Component {
               margin-top: 60px;
               margin-bottom: 40px;
               letter-spacing: 0.03em;
+              @media(max-width: 800px) {
+                {
+                  font-size: 20px;
+                  line-height: 28px;
+                  margin-top: 40px;
+                }
+              }
             }
           }
           .backHome {

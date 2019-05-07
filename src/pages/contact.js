@@ -28,7 +28,7 @@ const ContactPage = props => {
               <p>Describe briefly what kind of assistance can we provide</p>
             </header>
             <div className="resp-container">
-                <iframe className="resp-iframe" src="http://serwer1901380.home.pl/arpi/contact-form/"></iframe>
+                <iframe className="resp-iframe" src="https://arpistaffing.com/email/contact-form/"></iframe>
             </div>
             <div>
               <Link to="/">
