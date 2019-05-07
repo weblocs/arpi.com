@@ -10,9 +10,9 @@ import { FaTag } from "react-icons/fa/";
 import Item from "./Item";
 import CollapseItem from "./CollapseItem";
 import Expand from "./Expand";
+import Socials from "./Socials";
 
-import Facebook from "../../images/svg-icons/facebook.svg";
-import Linkedin from "../../images/svg-icons/linkedin.svg";
+
 
 class Menu extends React.Component {
   constructor(props) {
@@ -156,13 +156,8 @@ class Menu extends React.Component {
                 <CollapseItem item={{ label: item.label, subitems: item.subitems }}  theme={theme} />
                 :  <Item item={{to: item.to, label: item.label}} theme={theme} />
               ))}
-              
-              <a target="_blank" href="https://www.facebook.com/ArpiGroup/">
-              <span className="socialIcon"><Facebook /></span>
-              </a>
-              <a target="_blank" href="https://pl.linkedin.com/company/arpi-group">
-              <span className="socialIcon"><Linkedin /></span>
-              </a>
+
+              <Socials />
           </ul>
           {this.state.hiddenItems.length > 0 && <Expand onClick={this.toggleMenu} theme={theme} />}
           {open &&
@@ -193,14 +188,7 @@ class Menu extends React.Component {
             transition: all ${theme.time.duration.default};
           }
 
-          .socialIcon {
-            margin-left: 20px;
-            opacity: 0.6;
-            transition: .2s;
-            :hover {
-              opacity: 1;
-            }
-          }
+          
 
           .itemList {
             display: flex;
