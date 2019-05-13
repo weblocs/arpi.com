@@ -8,6 +8,7 @@ import { getScreenWidth, timeoutThrottlerHandler } from "../utils/helpers";
 import Footer from "../components/Footer/";
 import Header from "../components/Header";
 import Seo from "../components/Seo";
+import Transition from "../components/transition"
 
 import "../font/font.css";
 
@@ -129,6 +130,7 @@ class Layout extends React.Component {
                       pages={pages}
                       theme={this.state.theme}
                     />
+                    <Transition location={location}>{children}</Transition>
                     <main>{children}</main>
                     <Footer html={footnoteHTML} theme={this.state.theme} />
 
@@ -216,8 +218,8 @@ class Layout extends React.Component {
                     }
                     @media(max-width: 1199px) {
                       #fp-nav.fp-right {
-                        right: 40px;
-                        top: calc(100% - 100px);
+                        right: 30px;
+                        top: calc(100% - 115px);
                         width: 28px;
                       }
                     }
