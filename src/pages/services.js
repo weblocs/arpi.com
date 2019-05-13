@@ -10,6 +10,7 @@ import Arrow from "../images/svg-icons/arrow.svg";
 
 class IndexPage extends Component {
   render() {
+    const timer = 1;
     return (
       <div>
         <div className="backHome">
@@ -55,8 +56,11 @@ class IndexPage extends Component {
             }
           `}
           render={data => (
+            
             <ReactFullpage
               navigation
+              continuousVertical
+              
               anchors={data.allWordpressPost.edges
                 .filter(edge => edge.node.language == "2")
                 .map(edge => edge.node.slug)}
@@ -82,7 +86,9 @@ class IndexPage extends Component {
                                       <div className="proceedText">Proceed</div> <Arrow />
                                     </a>
                                   </div>
-                                  <div className={arr.length - 1 === i ? 'last' : ''}>
+                                  <div 
+                                  // className={arr.length - 1 === i ? 'last' : ''}
+                                  >
                                     <div
                                       className="slideButton next"
                                       onClick={() => fullpageApi.moveSectionDown()}
