@@ -53,6 +53,7 @@ class CollapseItem extends Component {
             <style jsx>{`
             .item {
                 :global(a) {
+                    font-family: geomanist-bold;
                     color: #434343;
                     padding: ${theme.space.inset.s};
                     transition: all ${theme.time.duration.default};
@@ -64,6 +65,7 @@ class CollapseItem extends Component {
                     }
             }
             .collapseItem {
+                font-family: geomanist-bold;
 
 
                 

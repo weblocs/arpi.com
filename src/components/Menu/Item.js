@@ -24,6 +24,7 @@ const Item = props => {
         .showItem {
           
             :global(a) {
+              font-family: geomanist-bold;
               color: #434343;
               padding: ${theme.space.inset.s};
               transition: all ${theme.time.duration.default};
