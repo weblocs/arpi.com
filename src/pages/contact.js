@@ -51,7 +51,7 @@ const ContactPage = props => {
         )}
       </ThemeContext.Consumer>
 
-      <Seo facebook={facebook} />
+      
       <style jsx>{`
       
       

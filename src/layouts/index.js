@@ -7,6 +7,7 @@ import { graphql, StaticQuery } from "gatsby";
 import { getScreenWidth, timeoutThrottlerHandler } from "../utils/helpers";
 import Footer from "../components/Footer/";
 import Header from "../components/Header";
+import Seo from "../components/Seo";
 
 import "../font/font.css";
 
@@ -17,6 +18,8 @@ export const FontLoadedContext = React.createContext(false);
 import themeObjectFromYaml from "../theme/theme.yaml";
 
 class Layout extends React.Component {
+
+  
   
   constructor() {
     super();
@@ -28,6 +31,8 @@ class Layout extends React.Component {
       headerMinimized: false,
       theme: themeObjectFromYaml
     };
+
+    
 
     if (typeof window !== `undefined`) {
       this.loadFont("font400", "Roboto", 400);
@@ -79,6 +84,7 @@ class Layout extends React.Component {
   };
 
   render() {
+    
     return (
       <StaticQuery
         query={graphql`
@@ -126,7 +132,13 @@ class Layout extends React.Component {
                     <main>{children}</main>
                     <Footer html={footnoteHTML} theme={this.state.theme} />
 
-                    <Seo />
+                    <Seo facebook={{
+    title: 'ARPI Group',
+    description: 'Outsourcing solutions for your business',
+    siteUrl: 'https://arpi.com/',
+    }} />
+
+                    
                     {/* --- STYLES --- */}
                     <style jsx>{`
                       main {
