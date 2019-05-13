@@ -155,6 +155,7 @@ class IndexPage extends Component {
               }
 
               .proceedText {
+                font-family: geomanist-bold;
                 font-size: 26px;
                 color: #fff;
 

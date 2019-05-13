@@ -32,7 +32,7 @@ const ContactPage = props => {
               <h1>drop us a line</h1>
               <p>Describe briefly what kind of assistance can we provide</p>
               <form action="/" method="POST">
-              
+
                 <input type="text" name="name" placeholder="name and surname"></input>
                 <input type="email" name="email" placeholder="your email"></input>
                 <input type="text" name="topic" placeholder="topic"></input>
@@ -130,6 +130,7 @@ const ContactPage = props => {
         margin-bottom: 55px;
       }
       .linkBox {
+        font-family: "geomanist-bold";
         display: flex;
         align-items: center;
         transition: .2s;
