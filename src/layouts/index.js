@@ -240,7 +240,12 @@ class Layout extends React.Component {
                       width: 8px !important;
                       margin: -4px 0 0 -4px !important;
                       opacity: 0.3 !important;
+                      transition: .2s;
+                      :hover {
+                        opacity: 0.5 !important;
+                      }
                     }
+
                     #fp-nav ul li:hover a.active span, #fp-nav ul li a.active span, .fp-slidesNav ul li:hover a.active span, .fp-slidesNav ul li a.active span {
                       opacity: 1 !important;
                       height: 8px !important;
