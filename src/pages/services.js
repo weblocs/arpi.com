@@ -109,6 +109,8 @@ class IndexPage extends Component {
             />
           )}
         />
+
+<Seo />
         <style jsx>{`
 
         .last {

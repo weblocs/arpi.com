@@ -3,6 +3,7 @@ import { graphql, StaticQuery, Link } from "gatsby";
 
 import Arrow from "../images/svg-icons/arrow-right-gray.svg";
 import Container from "../components/Container";
+import Hamburger from "../components/Menu/Hamburger";
 
 class IndexPage extends Component {
   render() {
@@ -26,6 +27,7 @@ class IndexPage extends Component {
         `}
         render={data => (
           <div className="mainSection">
+            <Hamburger />
             <Container>
               <p>{data.allWordpressPage.edges[0].node.title}</p>
               
@@ -73,6 +75,8 @@ class IndexPage extends Component {
                 height: 100vh;
                 display: flex;
                 align-items: center;
+
+                
                 
                 
                 p {
@@ -84,6 +88,12 @@ class IndexPage extends Component {
                   letter-spacing: 0.045em;
                   margin-bottom: 40px;  
                   margin-top: 100px;
+                  @media(max-width: 800px) {
+                    line-height: 44px;
+                    font-size: 40px;
+                    max-width: 263px;
+                    margin-top: 0px;
+                  }
                 }
               }
               
