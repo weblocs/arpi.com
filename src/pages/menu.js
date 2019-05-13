@@ -65,7 +65,7 @@ class IndexPage extends Component {
             <style jsx>{`
             .toTop {
               position: fixed;
-              top: 40px;
+              top: 72px;
               right: 40px;
             }
             .toBottom {

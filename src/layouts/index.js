@@ -227,10 +227,10 @@ class Layout extends React.Component {
 
                     @media(max-width:800px) {
                       .logotype {
-                        width: 100px;
+                        width: 145px;
                         position: absolute;
                         left: 40px;
-                        top: 5px;
+                        top: 48px;
                       }
                     }
 

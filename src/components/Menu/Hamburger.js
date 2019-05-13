@@ -17,7 +17,7 @@ const Hamburger = props => {
         .hamburger {
             @media(max-width: 800px) {
                 position: fixed;
-                top: 25px;
+                top: 55px;
                 cursor:pointer;
                 z-index:3;
                 right: 20px;
