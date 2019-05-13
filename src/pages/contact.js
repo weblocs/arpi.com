@@ -31,10 +31,18 @@ const ContactPage = props => {
             <header>
               <h1>drop us a line</h1>
               <p>Describe briefly what kind of assistance can we provide</p>
+              <form action="/" method="POST">
+              
+                <input type="text" name="name" placeholder="name and surname"></input>
+                <input type="email" name="email" placeholder="your email"></input>
+                <input type="text" name="topic" placeholder="topic"></input>
+                <textarea name="message" placeholder="your message"></textarea>
+
+              </form>
             </header>
-            <div className="resp-container">
+            {/* <div className="resp-container">
                 <iframe className="resp-iframe" src="https://arpistaffing.com/email/contact-form/"></iframe>
-            </div>
+            </div> */}
             <div className="backHome">
               <Container>
               <Link to="/">
@@ -53,6 +61,39 @@ const ContactPage = props => {
 
       
       <style jsx>{`
+
+      input, textarea {
+        font-family: geomanist;
+        text-align: center;
+        font-weight: 700;
+        font-size: 14px;
+        transition: .2s;
+        border: 2px solid #C6C6C6 !important;
+        outline: none !important;
+        width: 100%;
+        max-width: 343px;
+        letter-spacing: 0.03em;
+        line-height: 1.8;
+        text-rendering: optimizeLegibility;
+        padding: 0.36rem 0.66rem;
+        -webkit-appearance: none;
+        outline-offset: 0;
+        border-radius: 0;
+        box-sizing: border-box;
+        display: block;
+        margin-bottom: 20px;
+      }
+      textarea {
+        min-height: 200px;
+      }
+
+      input:focus, textarea:focus {
+        border-color: #555  !important;
+      }
+
+      ::placeholder {
+        color: #C6C6C6; 
+      }
       
       
       .backHome {

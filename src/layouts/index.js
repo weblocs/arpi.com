@@ -246,6 +246,7 @@ class Layout extends React.Component {
                       margin: -4px 0 0 -4px !important;
                     }
                     .slideButton {
+                      font-family: "geomanist-bold";
                       display: flex;
                       align-items: center;
                       font-size: 14px;

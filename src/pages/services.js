@@ -9,8 +9,10 @@ import Container from "../components/Container";
 import Arrow from "../images/svg-icons/arrow.svg";
 
 class IndexPage extends Component {
+
+
   render() {
-    const timer = 1;
+    
     return (
       <div>
         <div className="backHome">
@@ -171,6 +173,7 @@ class IndexPage extends Component {
           }
 
           .slideButton {
+            font-family: "geomanist-bold";
             display: flex;
             align-items: center;
             font-size: 14px;
