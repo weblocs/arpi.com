@@ -17,7 +17,7 @@ const getTransitionStyles = {
   exiting: {
     transition: `opacity ${timeout}ms ease-in-out`,
     opacity: 0,
-  },
+  }
 }
 
 class Transition extends React.PureComponent {
@@ -28,6 +28,7 @@ class Transition extends React.PureComponent {
       <TransitionGroup>
         <ReactTransition
           key={location.pathname}
+          appear={true}
           timeout={{
             enter: timeout,
             exit: timeout,

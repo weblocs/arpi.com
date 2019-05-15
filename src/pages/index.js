@@ -6,6 +6,10 @@ import Container from "../components/Container";
 import Hamburger from "../components/Menu/Hamburger";
 
 class IndexPage extends Component {
+  componentDidMount() {
+    setTimeout(function(){ location.href = "/services"; }, 4000);
+  }
+  
   render() {
     return (
       <StaticQuery

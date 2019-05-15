@@ -49,7 +49,7 @@ class Layout extends React.Component {
     });
     if (typeof window !== "undefined") {
       window.addEventListener("resize", this.resizeThrottler, false);
-    }
+    } 
   }
 
   resizeThrottler = () => {
@@ -62,9 +62,9 @@ class Layout extends React.Component {
 
   isHomePage = () => {
     if (this.props.location.pathname === "/") {
+      
       return true;
     }
-
     return false;
   };
 
@@ -136,10 +136,10 @@ class Layout extends React.Component {
                     <Footer html={footnoteHTML} theme={this.state.theme} />
 
                     <Seo facebook={{
-    title: 'ARPI Group',
-    description: 'Outsourcing solutions for your business',
-    siteUrl: 'https://arpi.com/',
-    }} />
+                    title: 'ARPI Group',
+                    description: 'Outsourcing solutions for your business',
+                    siteUrl: 'https://arpi.com/',
+                    }} />
 
                     
                     {/* --- STYLES --- */}
