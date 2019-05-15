@@ -28,7 +28,7 @@ class Menu extends React.Component {
 
     this.items = [
       { label: "Browse services", 
-      subitems: [ {text: 'Bemanning', link:'/services/#bemanning'}, {text: 'Regnskap', link:'/services/#regnskap'}, {text: 'Network', link:'/services/#network'}, {text: 'Staffing', link:'/services/#staffing'}, {text: 'Accounting', link: '/services/#accounting'}, {text:'Aviation', link:'/services/#aviation'} ] },
+      subitems: [ {text: 'Bemanning', link:'/services/#bemanning', color: '#005495'}, {text: 'Regnskap', link:'/services/#regnskap', color: '#952d58'}, {text: 'Network', link:'/services/#network', color: '#f25a5b'}, {text: 'Staffing', link:'/services/#staffing', color: '#005495'}, {text: 'Accounting', link: '/services/#accounting', color: '#952d58'}, {text:'Aviation', link:'/services/#aviation', color: '#369cd6'} ] },
       
       // ...pages,
       { to: "/contact/", label: "Contact" },
@@ -154,7 +154,7 @@ class Menu extends React.Component {
               {this.items.map(item => (
                 item.subitems ? 
                 <CollapseItem item={{ label: item.label, subitems: item.subitems }}  theme={theme} />
-                :  <Item item={{to: item.to, label: item.label}} theme={theme} />
+                :  <Item item={{to: item.to, label: item.label, color: item.color}} theme={theme} />
               ))}
 
               <Socials />

@@ -8,8 +8,12 @@ class CollapseItem extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {isActive: false, isHide: true };
+        this.state = {isActive: false, isHide: true, black: true };
     }
+
+    changeColor(){
+        this.setState({black: !this.state.black})
+     }
 
     toggleList = () => {
         this.setState({
@@ -35,7 +39,8 @@ class CollapseItem extends Component {
     }
 
     render() {
-        const { theme, item: { label, icon: Icon, subitems } = {} } = this.props;
+        const { theme, item: { label, subitems, color } = {} } = this.props;
+        let btn_class = this.state.black ? "blackButton" : "colorButton";
 
         return (
             <React.Fragment>
@@ -44,13 +49,16 @@ class CollapseItem extends Component {
                 
                     <ul className={`${this.state.isActive ? 'active' : ''} ${this.state.isHide ? 'hide' : '' }`}>
                         {subitems.map(item => (
-                            <li><a href={item.link}>{item.text}</a></li>
+                            <li><a style={{color: item.color}} onMouseEnter={this.changeColor.bind(this)} onMouseLeave={this.changeColor.bind(this)} className={btn_class} href={item.link}>{item.text}</a></li>
                         ))}
                     </ul>
             </li>
 
             {/* --- STYLES --- */}
             <style jsx>{`
+            a.blackButton {
+                color: #000 !important;
+            }
             .item {
                 :global(a) {
                     font-family: geomanist-bold;

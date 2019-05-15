@@ -130,7 +130,7 @@ class Layout extends React.Component {
                       pages={pages}
                       theme={this.state.theme}
                     />
-                    <Transition location={location}>
+                    <Transition location={this.props.location}>
                     <main>{children}</main>
                     </Transition>
                     <Footer html={footnoteHTML} theme={this.state.theme} />
