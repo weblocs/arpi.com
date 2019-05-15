@@ -14,7 +14,7 @@
     "gatsby-image": "^2.0.41",
     "gatsby-plugin-catch-links": "^2.0.2",
     "gatsby-plugin-feed": "^2.0.5",
-    "gatsby-plugin-google-analytics": "^2.0.6",
+    "gatsby-plugin-google-analytics": "^2.0.20",
     "gatsby-plugin-layout": "^1.0.2",
     "gatsby-plugin-manifest": "^2.0.2",
     "gatsby-plugin-netlify": "^2.0.0",
@@ -64,7 +64,7 @@
     "yaml-loader": "^0.5.0"
   },
   "keywords": [
-    "gatsby"
+    "arpi group, księgowość, rekrutacja, tworzenie stron internetowych, usługi księgowe, outsourcing, accounting, network, staffing, poland, norway, aviation, academy, cabin crew, pilots"
   ],
   "scripts": {
     "build": "gatsby build",

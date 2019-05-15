@@ -1,7 +1,7 @@
 module.exports = {
-  siteTitle: "ARPI Group", // <title>
+  siteTitle: "ARPI Group | Outsourcing Solution", // <title>
   shortSiteTitle: "ARPI Group", // <title> ending for posts and pages
-  siteDescription: "ARPI Group",
+  siteDescription: "Norwegian holding providing professional outsourcing solutions. The group consists of 4 companies including ARPI Staffing, ARPI Aviation, ARPI Accounting and ARPI Network. We allow our clients to focus on the core of their business by offering complex outsourcing services.",
   siteUrl: "https://arpi.com",
   siteLanguage: "en",
 
