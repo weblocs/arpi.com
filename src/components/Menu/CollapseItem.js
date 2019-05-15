@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 
 import Arrow from "../../images/svg-icons/arrow-small.svg";
 
+import SubItem from "./SubItem"
+
 
 class CollapseItem extends Component {
 
@@ -49,7 +51,8 @@ class CollapseItem extends Component {
                 
                     <ul className={`${this.state.isActive ? 'active' : ''} ${this.state.isHide ? 'hide' : '' }`}>
                         {subitems.map(item => (
-                            <li><a style={{color: item.color}} onMouseEnter={this.changeColor.bind(this)} onMouseLeave={this.changeColor.bind(this)} className={btn_class} href={item.link}>{item.text}</a></li>
+                            <SubItem color={item.color} link={item.link} text={item.text} />
+                            //<li><a style={{color: item.color}} onMouseEnter={this.changeColor.bind(this)} onMouseLeave={this.changeColor.bind(this)} className={btn_class} href={item.link}>{item.text}</a></li>
                         ))}
                     </ul>
             </li>
@@ -83,6 +86,7 @@ class CollapseItem extends Component {
                         font-weight: 600;
                         padding: 0 20px;
                         transition: .2s;
+                        
                     }
 
                     :global(.homepage):not(.fixed) & :global(span) {
@@ -93,12 +97,14 @@ class CollapseItem extends Component {
                     transition: .2s;
 
                     }
-                    :hover {
-                        opacity: .7;
-                    }
+                    
                     
                 span {
                     cursor: pointer;
+                    transition: .2s;
+                        :hover {
+                            opacity: .7;
+                        }
                 }
                 ul {
                     position: absolute;
@@ -169,7 +175,6 @@ class CollapseItem extends Component {
                     }
 
                     :global(a:hover) {
-                    opacity: 0.7;
                     }
 
                     :global(svg) {
