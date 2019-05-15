@@ -33,10 +33,17 @@ const ContactPage = props => {
               <p>Describe briefly what kind of assistance can we provide</p>
               <form action="/" method="POST">
 
-                <input type="text" name="name" placeholder="name and surname"></input>
-                <input type="email" name="email" placeholder="your email"></input>
-                <input type="text" name="topic" placeholder="topic"></input>
-                <textarea name="message" placeholder="your message"></textarea>
+                <div className="flexCenter">
+                  <div className="flexColumn">
+                    <input type="text" name="name" placeholder="name and surname"></input>
+                    <input type="email" name="email" placeholder="your email"></input>
+                    <input type="text" name="topic" placeholder="topic"></input>
+                    <textarea name="message" placeholder="your message"></textarea>
+                  </div>
+                  <div className="flexColumn">
+                    <input type="submit" value="Send"/>
+                  </div>
+                </div>
 
               </form>
             </header>
@@ -61,6 +68,13 @@ const ContactPage = props => {
 
       
       <style jsx>{`
+
+      .flexCenter {
+        display: flex;
+        .flexColumn {
+
+        }
+      }
 
       input, textarea {
         font-family: geomanist;
