@@ -7,7 +7,7 @@ import Hamburger from "../components/Menu/Hamburger";
 
 class IndexPage extends Component {
   componentDidMount() {
-    setTimeout(function(){ location.href = "/services"; }, 6000);
+    //setTimeout(function(){ location.href = "/services"; }, 6000);
   }
   
   render() {

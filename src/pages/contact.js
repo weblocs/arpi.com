@@ -6,6 +6,15 @@ import Container from "../components/Container";
 import Seo from "../components/Seo";
 import Arrow from "../images/svg-icons/arrow-right-gray.svg";
 
+function validateForm() {
+  var x = document.forms["myForm"]["name"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    event.preventDefault();
+    return false;
+  }
+}
+
 const ContactPage = props => {
   const {
     data: {
@@ -14,6 +23,8 @@ const ContactPage = props => {
       }
     }
   } = props;
+
+  
 
   return (
     <React.Fragment>
@@ -31,7 +42,7 @@ const ContactPage = props => {
             <header>
               <h1>drop us a line</h1>
               <p>Describe briefly what kind of assistance can we provide</p>
-              <form action="/" method="POST">
+              <form action="/succes" name="myForm" onSubmit={validateForm} method="POST">
 
                 <div className="flexCenter">
                   <div className="flexColumn">
@@ -40,7 +51,7 @@ const ContactPage = props => {
                     <input type="text" name="topic" placeholder="topic"></input>
                     <textarea name="message" placeholder="your message"></textarea>
                   </div>
-                  <div className="flexColumn">
+                  <div className="flexColumnRight">
                     <input type="submit" value="Send"/>
                   </div>
                 </div>
@@ -73,6 +84,10 @@ const ContactPage = props => {
         display: flex;
         .flexColumn {
 
+        }
+        flexColumnRight {
+          width: 100%;
+          float: right;
         }
       }
 
