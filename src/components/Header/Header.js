@@ -156,7 +156,7 @@ class Header extends React.Component {
             left: 0;
             right: 0;
             height: 1px;
-            top: ${path === "/" ? theme.header.height.homepage : theme.header.height.default};
+            top: 0;
           }
 
           @from-width tablet {

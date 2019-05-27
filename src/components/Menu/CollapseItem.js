@@ -17,6 +17,52 @@ class CollapseItem extends Component {
         this.setState({black: !this.state.black})
      }
 
+     fadeInList = () => {
+        this.setState({
+            isActive: true
+        });
+        
+        this.state.isHide ?
+
+        this.setState({
+            isHide: false
+        })
+        
+        :
+
+        setTimeout(
+            function() {
+                this.setState({
+                    isHide: false
+                });
+            }
+            .bind(this),
+        300)
+    }
+
+    fadeOutList = () => {
+        this.setState({
+            isActive: false
+        });
+        
+        this.state.isHide ?
+
+        this.setState({
+            isHide: true
+        })
+        
+        :
+
+        setTimeout(
+            function() {
+                this.setState({
+                    isHide: true
+                });
+            }
+            .bind(this),
+        300)
+    }
+
     toggleList = () => {
         this.setState({
             isActive: !this.state.isActive
@@ -46,8 +92,8 @@ class CollapseItem extends Component {
 
         return (
             <React.Fragment>
-            <li className={"hiddenItem" in this.props ? "hiddenItem" : "collapseItem"} key={label}>
-                <span className={`${this.state.isActive ? 'rotate' : ''}`} onClick={this.toggleList}>{label}<Arrow /></span> 
+            <li onMouseEnter={this.fadeInList} onMouseLeave={this.fadeOutList} className={"hiddenItem" in this.props ? "hiddenItem" : "collapseItem"} key={label}>
+                <span className={`${this.state.isActive ? 'rotate' : ''}`}  >{label}<Arrow /></span> 
                 
                     <ul className={`${this.state.isActive ? 'active' : ''} ${this.state.isHide ? 'hide' : '' }`}>
                         {subitems.map(item => (
@@ -59,6 +105,7 @@ class CollapseItem extends Component {
 
             {/* --- STYLES --- */}
             <style jsx>{`
+            
             a.blackButton {
                 color: #000 !important;
             }

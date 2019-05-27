@@ -162,6 +162,9 @@ class Layout extends React.Component {
                       body {
                         font-family: Geomanist, sans-serif;
                       }
+                      ul.hide li {
+                        display: none;
+                    }
                       h1,
                       h2,
                       h3 {

@@ -9,7 +9,18 @@ import Container from "../components/Container";
 import Arrow from "../images/svg-icons/arrow.svg";
 
 class IndexPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { isShowingText: true };
 
+    // Toggle the state every second
+    setInterval(() => (
+      
+      this.setState(previousState => (
+        { isShowingText: !previousState.isShowingText }
+      ))
+    ), 1000);
+  }
 
   render() {
     
@@ -19,7 +30,7 @@ class IndexPage extends Component {
           <Container>
             <Link to="/">
               <div className="slideButton">
-                <div>Go back home</div> <span className="rotateUp"><Arrow /></span>
+                <div className={this.state.isShowingText ? 'hide' : ''}>Go back home</div> <span className="rotateUp"><Arrow /></span>
               </div>
             </Link>
           </Container>
