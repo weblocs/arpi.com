@@ -162,6 +162,8 @@ class Layout extends React.Component {
                       body {
                         font-family: Geomanist, sans-serif;
                       }
+                      ::-moz-selection { color: #fff;background: #434343;}
+                      ::selection { color: #fff;background: #434343; }
                       ul.hide li {
                         display: none;
                     }
