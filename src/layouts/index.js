@@ -172,7 +172,9 @@ class Layout extends React.Component {
                       }
                       ul.hide li {
                         display: none;
-                    }
+                      }
+                      ::-moz-selection { color: #fff;background: #434343;}
+                      ::selection { color: #fff;background: #434343; }
                       h1 {
                         letter-spacing: -0.04em;
                       }
