@@ -97,7 +97,7 @@ class CollapseItem extends Component {
                 
                     <ul className={`${this.state.isActive ? 'active' : ''} ${this.state.isHide ? 'hide' : '' }`}>
                         {subitems.map(item => (
-                            <SubItem color={item.color} link={item.link} text={item.text} />
+                            <SubItem key={item.text} color={item.color} link={item.link} text={item.text} />
                             //<li><a style={{color: item.color}} onMouseEnter={this.changeColor.bind(this)} onMouseLeave={this.changeColor.bind(this)} className={btn_class} href={item.link}>{item.text}</a></li>
                         ))}
                     </ul>

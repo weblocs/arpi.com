@@ -72,6 +72,7 @@ class IndexPage extends Component {
           render={data => (
             
             <ReactFullpage
+            licenseKey={'D9096ED4-77F14A81-8A5B07B2-83C84CBE'}
               navigation
               continuousVertical
               
@@ -85,7 +86,7 @@ class IndexPage extends Component {
                       {data.allWordpressPost.edges
                         .filter(edge => edge.node.language == "2")
                         .map((edge, i, arr) => (
-                          <div
+                          <div key={edge.node.acf.text}
                             className="section fullpageSlide"
                             style={{ backgroundImage: edge.node.acf.gradient }}
                           >

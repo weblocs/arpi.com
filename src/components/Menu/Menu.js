@@ -153,8 +153,8 @@ class Menu extends React.Component {
           <ul className="itemList" ref={this.itemList}>
               {this.items.map(item => (
                 item.subitems ? 
-                <CollapseItem item={{ label: item.label, subitems: item.subitems }}  theme={theme} />
-                :  <Item item={{to: item.to, label: item.label, color: item.color}} theme={theme} />
+                <CollapseItem key={item.label} item={{ label: item.label, subitems: item.subitems }}  theme={theme} />
+                :  <Item key={item.label} item={{to: item.to, label: item.label, color: item.color}} theme={theme} />
               ))}
 
               <Socials />
