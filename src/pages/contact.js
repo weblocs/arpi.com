@@ -222,7 +222,10 @@ const ContactPage = props => {
         color: #434343;
         font-weight: 300;
         margin-bottom: 30px;
-        margin-top: 50px;
+        margin-top: 0;
+        @media(max-width: 800px) {
+          margin-top: 50px;
+        }
       }
       p {
         font-size:34px;

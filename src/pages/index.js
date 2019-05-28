@@ -81,6 +81,8 @@ class IndexPage extends Component {
                 align-items: center;
 
                 
+
+                
                 
                 
                 p {
@@ -92,11 +94,16 @@ class IndexPage extends Component {
                   letter-spacing: 0.045em;
                   margin-bottom: 40px;  
                   margin-top: 100px;
-                  @media(max-width: 800px) {
+                  @media(max-width: 1000px) {
+                    margin-bottom: 5px;
                     line-height: 44px;
                     font-size: 40px;
                     max-width: 263px;
                     margin-top: 0px;
+                  }
+                  @media(max-width: 500px) {
+                    
+                    margin-bottom: 40px;
                   }
                 }
               }
