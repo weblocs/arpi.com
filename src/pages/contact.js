@@ -7,9 +7,29 @@ import Seo from "../components/Seo";
 import Arrow from "../images/svg-icons/arrow-right-gray.svg";
 
 function validateForm() {
-  var x = document.forms["myForm"]["name"].value;
-  if (x == "") {
-    alert("Name must be filled out");
+  var x = document.forms["myForm"]["name"];
+  var y = 0;
+  if (x.value == "") {
+    x.classList.add("unvalid");
+    y = 1;
+  } else {
+    x.classList.remove("unvalid");
+  }
+  var x = document.forms["myForm"]["email"];
+  if (x.value == "") {
+    x.classList.add("unvalid");
+    y = 1;
+  } else {
+    x.classList.remove("unvalid");
+  }
+  var x = document.forms["myForm"]["topic"];
+  if (x.value == "") {
+    x.classList.add("unvalid");
+    y = 1;
+  } else {
+    x.classList.remove("unvalid");
+  }
+  if(y == 1) {
     event.preventDefault();
     return false;
   }
