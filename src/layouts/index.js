@@ -162,11 +162,6 @@ class Layout extends React.Component {
                       body {
                         font-family: Geomanist, sans-serif;
                       }
-                      ::-moz-selection { color: #fff; background: #434343; }
-                      ::selection { color: #fff; background: #434343; }
-                      ul.hide li {
-                        display: none;
-                    }
                       h1,
                       h2,
                       h3 {
@@ -211,9 +206,6 @@ class Layout extends React.Component {
                           color:  #005495;
                         }
                         
-                    }
-                    .logotype {
-                      transition: .2s;
                     }
 
                     iframe {

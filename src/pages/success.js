@@ -26,19 +26,13 @@ class IndexPage extends Component {
         render={data => (
           <div className="mainSection">
             <Container>
-              <p>Thank you for your message</p>
+              <p>Success</p>
               <Link to={data.allWordpressPage.edges[0].node.acf.link}>
                 {data.allWordpressPage.edges[0].node.acf.button}
               </Link>
             </Container>
 
             <style jsx>{`
-            p {
-              font-size: 40px;
-              @media(max-width: 800px) {
-                font-size: 24px;
-              }
-            }
               .mainSection {
                 height: 100vh;
                 display: flex;

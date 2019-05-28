@@ -7,29 +7,9 @@ import Seo from "../components/Seo";
 import Arrow from "../images/svg-icons/arrow-right-gray.svg";
 
 function validateForm() {
-  var x = document.forms["myForm"]["name"];
-  var y = 0;
-  if (x.value == "") {
-    x.classList.add("unvalid");
-    y = 1;
-  } else {
-    x.classList.remove("unvalid");
-  }
-  var x = document.forms["myForm"]["email"];
-  if (x.value == "") {
-    x.classList.add("unvalid");
-    y = 1;
-  } else {
-    x.classList.remove("unvalid");
-  }
-  var x = document.forms["myForm"]["topic"];
-  if (x.value == "") {
-    x.classList.add("unvalid");
-    y = 1;
-  } else {
-    x.classList.remove("unvalid");
-  }
-  if(y == 1) {
+  var x = document.forms["myForm"]["name"].value;
+  if (x == "") {
+    alert("Name must be filled out");
     event.preventDefault();
     return false;
   }
@@ -62,7 +42,7 @@ const ContactPage = props => {
             <header>
               <h1>drop us a line</h1>
               <p>Describe briefly what kind of assistance can we provide</p>
-              <form action="/success" name="myForm" onSubmit={validateForm} method="POST">
+              <form action="/succes" name="myForm" onSubmit={validateForm} method="POST">
 
                 <div className="flexCenter">
                   <div className="flexColumn">
@@ -72,7 +52,7 @@ const ContactPage = props => {
                     <textarea name="message" placeholder="your message"></textarea>
                   </div>
                   <div className="flexColumnRight">
-                    <input type="submit" value="Send"/><div className="submitAfter"><Arrow /></div>
+                    <input type="submit" value="Send"/>
                   </div>
                 </div>
 
@@ -101,49 +81,13 @@ const ContactPage = props => {
       <style jsx>{`
 
       .flexCenter {
-        align-items: center;
         display: flex;
-        .submitAfter {
-          position: absolute;
-          right: 0;
-          top:18px;
-          @media(max-width: 800px) {
-            left: 76px;
-            top: 28px;
-          }
-        }
         .flexColumn {
-          min-width: 342px;
-          @media(max-width:800px) {
-            min-width: 0;
-            width: 100%;
-          }
-        }
-        @media(max-width: 800px) {
-          display: block; 
-        }
-        
-      }
 
-      .flexColumnRight {
-        width: 100%;
-        position: relative;
-        transition: .2s;
-        :hover {
-          opacity: .7;
         }
-        input {
+        flexColumnRight {
+          width: 100%;
           float: right;
-          @media(max-width: 800px) {
-            float: left;
-            margin-left: -10px;
-            padding-left: 0;  
-            margin-top: 10px;
-            margin-bottom: 30px;
-          }
-        }
-        @media(max-width: 800px) {
-          display: block;
         }
       }
 
@@ -167,32 +111,7 @@ const ContactPage = props => {
         box-sizing: border-box;
         display: block;
         margin-bottom: 20px;
-
-        
-
-        &.unvalid {
-          border-color: #b53b3b !important;
-        }
       }
-
-      textarea {
-          margin-bottom: 0;
-          padding-bottom: 0;
-      }
-
-      input[type="submit"] {
-        border: none !important;
-        margin-bottom: 0;
-        padding-bottom: 0;  
-        font-size: 26px;
-        font-weight: 900;
-        cursor: pointer;
-        font-family: geomanist;
-        width: 115px;
-        padding-right: 30px;
-      }
-
-      
       textarea {
         min-height: 200px;
       }
