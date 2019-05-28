@@ -10,18 +10,7 @@ import Arrow from "../images/svg-icons/arrow.svg";
 
 class IndexPage extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = { isShowingText: true };
-
-    // Toggle the state every second
-    setInterval(() => (
-
-      this.setState(previousState => (
-        { isShowingText: !previousState.isShowingText }
-      ))
-    ), 1000);
-  }
+  
 
   render() {
     
