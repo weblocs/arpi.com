@@ -105,8 +105,12 @@ const ContactPage = props => {
         .flexColumn {
 
         }
-        flexColumnRight {
-          width: 100%;
+        
+      }
+
+      .flexColumnRight {
+        width: 100%;
+        input {
           float: right;
         }
       }
@@ -131,6 +135,9 @@ const ContactPage = props => {
         box-sizing: border-box;
         display: block;
         margin-bottom: 20px;
+        &.unvalid {
+          border-color: #b53b3b !important;
+        }
       }
       textarea {
         min-height: 200px;
