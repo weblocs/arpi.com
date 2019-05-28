@@ -92,8 +92,8 @@ class CollapseItem extends Component {
 
         return (
             <React.Fragment>
-            <li  className={"hiddenItem" in this.props ? "hiddenItem" : "collapseItem"} key={label}>
-                <span onMouseEnter={this.fadeInList} onMouseLeave={this.fadeOutList} className={`${this.state.isActive ? 'rotate' : ''}`} >{label}<Arrow /></span> 
+            <li onMouseEnter={this.fadeInList} onMouseLeave={this.fadeOutList} className={"hiddenItem" in this.props ? "hiddenItem" : "collapseItem"} key={label}>
+                <span  className={`${this.state.isActive ? 'rotate' : ''}`} >{label}<Arrow /></span> 
                 
                     <ul className={`${this.state.isActive ? 'active' : ''} ${this.state.isHide ? 'hide' : '' }`}>
                         {subitems.map(item => (
