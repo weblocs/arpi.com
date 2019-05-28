@@ -89,6 +89,10 @@ class Header extends React.Component {
             width: 100%;
             align-items: center;
 
+            @media(max-width: 1370px) {
+              max-width: 1000px;
+            }
+
 
             :global(a.logoType) {
               align-items: center;

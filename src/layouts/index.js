@@ -235,7 +235,7 @@ class Layout extends React.Component {
                         width: 145px;
                         position: absolute;
                         left: 40px;
-                        top: 48px;
+                        top: 45px;
                       }
                     }
 
