@@ -133,6 +133,7 @@ const ContactPage = props => {
           opacity: .7;
         }
         input {
+          background: #fff;
           float: right;
           @media(max-width: 800px) {
             float: left;
