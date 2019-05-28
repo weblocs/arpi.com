@@ -19,7 +19,7 @@ class IndexPage extends Component {
         <div className="backHome">
           <Container>
             <Link to="/">
-              <div className="slideButton">
+              <div className="slideButton goBackHome">
                 <div>Go back home</div> <span className="rotateUp"><Arrow /></span>
               </div>
             </Link>
@@ -122,6 +122,16 @@ class IndexPage extends Component {
 
         <style jsx>{`
 
+        .goBackHome {
+          @media(min-width:600px) {
+            @media(max-width:800px){
+              position: absolute;
+              right:30px;
+            }
+          }
+          
+        }
+
         .last {
           display: none;
         }
@@ -152,7 +162,7 @@ class IndexPage extends Component {
             .slideContentItem {
               width: 50%;
 
-              @media(max-width: 800px) {
+              @media(max-width: 640px) {
                 width: 100%;
               }
 
@@ -220,7 +230,7 @@ class IndexPage extends Component {
             z-index: 3;
             width: 100%;
           }
-          @media(max-width: 800px) {
+          @media(max-width: 640px) {
             .proceed {
               float: none !important;
             }
