@@ -98,11 +98,11 @@ class IndexPage extends Component {
                     margin-bottom: 5px;
                     line-height: 44px;
                     font-size: 40px;
-                    max-width: 263px;
+                    max-width: 463px;
                     margin-top: 0px;
                   }
                   @media(max-width: 500px) {
-                    
+                    max-width: 263px;
                     margin-bottom: 40px;
                   }
                 }
