@@ -15,9 +15,9 @@ const Hamburger = props => {
 
       <style jsx>{`
         .hamburger {
-            @media(max-width: 800px) {
+            @media(max-width: 830px) {
                 position: fixed;
-                top: 55px;
+                top: 42px;
                 cursor:pointer;
                 z-index:3;
                 right: 20px;

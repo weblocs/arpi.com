@@ -107,7 +107,7 @@ const ContactPage = props => {
           position: absolute;
           right: 0;
           top:18px;
-          @media(max-width: 800px) {
+          @media(max-width: 830px) {
             left: 76px;
             top: 38px;
           }
@@ -119,7 +119,7 @@ const ContactPage = props => {
             width: 100%;
           }
         }
-        @media(max-width: 800px) {
+        @media(max-width: 830px) {
           display: block; 
         }
         
@@ -135,7 +135,7 @@ const ContactPage = props => {
         input {
           background: #fff;
           float: right;
-          @media(max-width: 800px) {
+          @media(max-width: 830px) {
             float: left;
             margin-left: -10px;
             padding-left: 0;  
@@ -143,13 +143,14 @@ const ContactPage = props => {
             margin-bottom: 30px;
           }
         }
-        @media(max-width: 800px) {
+        @media(max-width: 830px) {
           display: block;
         }
       }
 
       input, textarea {
         font-family: geomanist-medium;
+        color: #434343;
         text-align: center;
         font-weight: 700;
         font-size: 14px;
@@ -231,7 +232,7 @@ const ContactPage = props => {
           font-size: 54px;
           line-height: 56px;
         }
-        @media(max-width: 800px) {
+        @media(max-width: 830px) {
           font-size: 35px;
           line-height: 46px;
           margin-top: 50px;
@@ -250,7 +251,7 @@ const ContactPage = props => {
           line-height: 32px;
           margin-bottom: 42px;
         }
-        @media(max-width: 800px) {
+        @media(max-width: 830px) {
           font-size: 26px;
           line-height: 30px;
           margin-bottom: 42px;

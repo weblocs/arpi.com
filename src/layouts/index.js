@@ -217,10 +217,15 @@ class Layout extends React.Component {
                       border: 0;
                     }
                     @media(min-width: 1200px) {
-                    #fp-nav.fp-right {
-                      left: 40px;
-                      width: 28px;
+                      #fp-nav.fp-right {
+                        left: 40px;
+                        width: 28px;
+                      }
                     }
+                    @media(max-width: 830px) {
+                      #fp-nav.fp-right {
+                        display: none;
+                      }
                     }
                     @media(max-width: 1199px) {
                       #fp-nav.fp-right {

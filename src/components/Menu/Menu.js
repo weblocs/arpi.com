@@ -199,6 +199,7 @@ class Menu extends React.Component {
             padding: 0; /* 0 ${theme.space.s}; */
             position: relative;
             width: 100%;
+            top: -15px;
           }
 
           @below desktop {

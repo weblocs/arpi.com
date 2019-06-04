@@ -35,7 +35,7 @@ class IndexPage extends Component {
             <style jsx>{`
             p {
               font-size: 40px;
-              @media(max-width: 800px) {
+              @media(max-width: 830px) {
                 font-size: 24px;
               }
             }

@@ -106,7 +106,7 @@ class CollapseItem extends Component {
             {/* --- STYLES --- */}
             <style jsx>{`
             a.blackButton {
-                color: #000 !important;
+                color: #434343 !important;
             }
             .item {
                 :global(a) {

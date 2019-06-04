@@ -67,6 +67,9 @@ class IndexPage extends Component {
               position: fixed;
               top: 72px;
               right: 40px;
+              @media(max-width:800px) {
+                top: 60px;
+              }
             }
             .toBottom {
               position: fixed;

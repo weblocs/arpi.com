@@ -211,10 +211,18 @@ class IndexPage extends Component {
               font-size: 34px;
               max-width: 543px;
               line-height: 40px;
-              margin-top: 60px;
+              margin-top: 40px;
               margin-bottom: 40px;
               letter-spacing: 0.03em;
-              @media(max-width: 800px) {
+              @media(max-width: 830px) {
+                line-height: 32px;
+                  font-size: 30px;
+              }
+              @media(max-width: 680px) {
+                line-height: 26px;
+                  font-size: 24px;
+              }
+              @media(max-width: 530px) {
                 {
                   font-size: 20px;
                   line-height: 28px;
@@ -229,10 +237,14 @@ class IndexPage extends Component {
             left: 0;
             z-index: 3;
             width: 100%;
+            @media(max-width: 830px) {
+              top: calc(100% - 60px);
+              left: 120px;
+            }
           }
           @media(max-width: 640px) {
             .proceed {
-              float: none !important;
+              float: right !important;
             }
             .desktopOnly {
               display: none;

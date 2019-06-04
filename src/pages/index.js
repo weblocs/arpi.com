@@ -56,6 +56,9 @@ class IndexPage extends Component {
               width: 110%;
               left: -5%;
               height: 30px;
+              @media(max-width: 1000px) {
+                height: 20px;
+              }
               span {
                 width: 25%;
                 transform: skewX(-25deg);
@@ -94,16 +97,25 @@ class IndexPage extends Component {
                   letter-spacing: 0.045em;
                   margin-bottom: 40px;  
                   margin-top: 100px;
-                  @media(max-width: 1000px) {
+                  @media(max-width: 830px) {
                     margin-bottom: 5px;
-                    line-height: 44px;
-                    font-size: 40px;
-                    max-width: 463px;
-                    margin-top: 50px;
+                    line-height: 32px;
+                    font-size: 30px;
+                    max-width: 350px;
+                    margin-top: 160px;
                   }
+
+                  @media(max-width:700px) {
+                    margin-top: 115px;
+                  }
+
+
                   @media(max-width: 500px) {
+                    margin-top: 50px;
                     max-width: 263px;
                     margin-bottom: 40px;
+                    line-height: 44px;
+                    font-size: 40px;
                     
                   }
                 }

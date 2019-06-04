@@ -89,8 +89,16 @@ class Header extends React.Component {
             width: 100%;
             align-items: center;
 
+            
+
             @media(max-width: 1370px) {
               max-width: 1000px;
+            }
+
+            @media(max-width: 1000px) {
+              @media(min-width: 800px) {
+                padding: 0 37px !important;
+              }
             }
 
 
@@ -145,7 +153,12 @@ class Header extends React.Component {
             width: 200px;
             margin: ${theme.space.inline.default};
             overflow: hidden;
-            transition: all 0.5s;
+            transition: all 0.2s;
+
+            @media(max-width: 1000px) {
+              height: 89px;
+              width: 160px;
+            }
 
             .homepage & {
               
