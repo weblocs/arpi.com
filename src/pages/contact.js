@@ -109,7 +109,7 @@ const ContactPage = props => {
           top:18px;
           @media(max-width: 800px) {
             left: 76px;
-            top: 28px;
+            top: 38px;
           }
         }
         .flexColumn {
@@ -139,7 +139,7 @@ const ContactPage = props => {
             float: left;
             margin-left: -10px;
             padding-left: 0;  
-            margin-top: 10px;
+            margin-top: 20px;
             margin-bottom: 30px;
           }
         }
@@ -149,7 +149,7 @@ const ContactPage = props => {
       }
 
       input, textarea {
-        font-family: geomanist;
+        font-family: geomanist-medium;
         text-align: center;
         font-weight: 700;
         font-size: 14px;
@@ -186,9 +186,13 @@ const ContactPage = props => {
       font-family: geomanist;
       width: 115px;
       padding-right: 30px;
+      color: #434343;
     }
       textarea {
-        min-height: 200px;
+        min-height: 150px;
+        @media(max-width:1440px) {
+          min-height: 135px;
+        }
       }
 
       input:focus, textarea:focus {
@@ -223,7 +227,13 @@ const ContactPage = props => {
         font-weight: 300;
         margin-bottom: 30px;
         margin-top: 0;
+        @media(max-width: 1440px) {
+          font-size: 54px;
+          line-height: 56px;
+        }
         @media(max-width: 800px) {
+          font-size: 35px;
+          line-height: 46px;
           margin-top: 50px;
         }
       }
@@ -235,6 +245,16 @@ const ContactPage = props => {
         opacity: 0.6;
         font-weight: 300;
         margin-bottom: 55px;
+        @media(max-width: 1440px) {
+          font-size: 28px;
+          line-height: 32px;
+          margin-bottom: 42px;
+        }
+        @media(max-width: 800px) {
+          font-size: 26px;
+          line-height: 30px;
+          margin-bottom: 42px;
+        }
       }
       .linkBox {
         font-family: "geomanist-bold";
