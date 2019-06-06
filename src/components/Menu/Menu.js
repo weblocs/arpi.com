@@ -33,7 +33,7 @@ class Menu extends React.Component {
       // ...pages,
       { to: "/contact/", label: "Contact" },
       { label: "Languages", 
-      subitems: [ {text: 'Polish', link:'/pl'}, {text: 'English', link: '/'}, {text:'Norwegian', link:'/nb'} ] },
+      subitems: [ {text: 'Polish', link:'/pl', color: '#444'}, {text: 'English', link: '/', color: '#444'}, {text:'Norwegian', link:'/nb', color: '#444'} ] },
       
     ];
 

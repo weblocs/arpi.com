@@ -52,6 +52,12 @@ const ContactPage = props => {
         {theme => (
           <div className="contactForm">
           <Container>
+          <div className="colorBar">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
             <div>
               <Link to="/">
                 <div className="linkBox linkBoxMobile">
@@ -102,6 +108,34 @@ const ContactPage = props => {
 
       
       <style jsx>{`
+
+.colorBar {
+  position: fixed;
+  top: 0px;
+  display: flex;
+  width: 110%;
+  left: -5%;
+  height: 30px;
+  @media(max-width: 1000px) {
+    height: 20px;
+  }
+  span {
+    width: 25%;
+    transform: skewX(-25deg);
+  }
+  span:nth-child(1) {
+    background-image: linear-gradient(122deg, rgb(26, 140, 207), rgb(23, 168, 254));
+  }
+  span:nth-child(2) {
+    background-image: linear-gradient(122deg, rgb(0, 68, 132), rgb(14, 104, 188));
+  }
+  span:nth-child(3) {
+    background-image: linear-gradient(122deg, rgb(127, 29, 70), rgb(187, 50, 107));
+  }
+  span:nth-child(4) {
+    background-image: linear-gradient(122deg, rgb(234, 65, 72), rgb(255, 119, 124));
+  }
+}
 
       .flexCenter {
         align-items: center;
