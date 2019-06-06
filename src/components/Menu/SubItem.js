@@ -12,7 +12,7 @@ class SubItem extends Component {
   
   render() {
     const { link, text, color } = this.props;
-    let btn_class = this.state.black ? "blackButton" : "colorButton";
+    let btn_class = this.state.black ? "colorButton" : "blackButton";
   return (
     <React.Fragment>
         <li>
