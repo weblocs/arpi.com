@@ -113,7 +113,7 @@ class CollapseItem extends Component {
                     font-family: geomanist-bold;
                     color: #434343;
                     padding: ${theme.space.inset.s};
-                    transition: all ${theme.time.duration.default};
+                    transition: all .2s;
                     border-radius: ${theme.size.radius.small};
                     font-weight: 600;
                     padding: 0 20px;
