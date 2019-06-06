@@ -193,7 +193,7 @@ const ContactPage = props => {
       }
 
       input, textarea {
-        font-family: geomanist-medium;
+        font-family: geomanist-bold;
         color: #434343;
         text-align: center;
         font-weight: 700;

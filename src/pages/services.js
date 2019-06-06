@@ -142,7 +142,9 @@ class IndexPage extends Component {
         }
 
         .mobileBackHome {
+          @media(min-width:831px){
           display: none !important;
+          }
           @media(min-width:630px){
             @media(max-width:830px){
               position: absolute;
@@ -150,10 +152,10 @@ class IndexPage extends Component {
               left: 100px;
             }
           }
-          @media(max-width:630px){
-            display: none !important;
-          }
         }
+        @media(max-width:629px){
+          display: none !important;
+          }
 
         .backHome {
           @media(min-width:630px){
