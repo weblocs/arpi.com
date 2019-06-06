@@ -214,7 +214,7 @@ const ContactPage = props => {
         display: block;
         margin-bottom: 20px;
         &.unvalid {
-          border-color: #b53b3b !important;
+          border-color: #F15E4F !important;
         }
       }
       textarea {
