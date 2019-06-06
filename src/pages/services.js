@@ -90,7 +90,7 @@ class IndexPage extends Component {
                                       <div className="proceedText">Proceed</div> <Arrow />
                                     </a>
                                   </div>
-                                  <div 
+                                  <div className="slideButtons"
                                   // className={arr.length - 1 === i ? 'last' : ''}
                                   >
                                     <div
@@ -98,8 +98,17 @@ class IndexPage extends Component {
                                       onClick={() => fullpageApi.moveSectionDown()}
                                     >
                                       <div>Next</div> <span className="rotateDown"><Arrow /></span>
+                                      
                                     </div>
+                                    <Link to="/">
+                                    <div
+                                      className="slideButton mobileBackHome next"
+                                    >
+                                      <div>Go back home</div> <span className="rotateDown"><Arrow /></span>
+                                    </div>
+                                    </Link>
                                   </div>
+
                                 </div>
                                 <div className="slideContentItem desktopOnly">
                                   <div className="proceed">
@@ -122,14 +131,36 @@ class IndexPage extends Component {
 
         <style jsx>{`
 
-        .goBackHome {
-          @media(min-width:600px) {
-            @media(max-width:800px){
-              position: absolute;
-              right:30px;
+        .slideContentItem {
+          @media(min-width:630px){
+            @media(max-width:830px){
+              .slideButtons {
+                position: relative;
+              }
             }
           }
-          
+        }
+
+        .mobileBackHome {
+          display: none !important;
+          @media(min-width:630px){
+            @media(max-width:830px){
+              position: absolute;
+              top: 0;
+              left: 100px;
+            }
+          }
+          @media(max-width:630px){
+            display: none !important;
+          }
+        }
+
+        .backHome {
+          @media(min-width:630px){
+            @media(max-width:830px){
+              display: none;
+            }
+          }
         }
 
         .last {
@@ -237,10 +268,6 @@ class IndexPage extends Component {
             left: 0;
             z-index: 3;
             width: 100%;
-            @media(max-width: 830px) {
-              top: calc(100% - 60px);
-              left: 120px;
-            }
           }
           @media(max-width: 640px) {
             .proceed {
