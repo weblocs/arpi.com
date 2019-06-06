@@ -308,7 +308,7 @@ const ContactPage = props => {
         transition: .2s;
         opacity: 0.6;
         margin-bottom: 50px;
-        @media(max-width:800px) {
+        @media(max-width:830px) {
           display: none;
         }
         :hover {
@@ -317,7 +317,7 @@ const ContactPage = props => {
         &.linkBoxMobile {
           margin-top:50px;
           display: block;
-          @media(min-width:800px) {
+          @media(min-width:830px) {
             display: none;
           }
         }
