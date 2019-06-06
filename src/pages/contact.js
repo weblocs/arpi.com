@@ -60,12 +60,15 @@ const ContactPage = props => {
               </Link>
             </div>
             <header>
+            <form action="/success" name="myForm" onSubmit={validateForm} method="POST">
+            <div className="flexCenter">
+                  <div className="flexColumn">
+
               <h1>drop us a line</h1>
               <p>Describe briefly what kind of assistance can we provide</p>
-              <form action="/success" name="myForm" onSubmit={validateForm} method="POST">
+              
 
-                <div className="flexCenter">
-                  <div className="flexColumn">
+                
                     <input type="text" name="name" placeholder="name and surname"></input>
                     <input type="email" name="email" placeholder="your email"></input>
                     <input type="text" name="topic" placeholder="topic"></input>
@@ -113,10 +116,17 @@ const ContactPage = props => {
           }
         }
         .flexColumn {
-          min-width: 342px;
-          @media(max-width:800px) {
-            min-width: 0;
-            width: 100%;
+          input {
+            min-width: 342px;
+            @media(max-width:800px) {
+              min-width: 0;
+              width: 100%;
+            }
+          }
+          h1, p {
+            @media(min-width: 1000px) {
+              min-width: 400px;
+            }
           }
         }
         @media(max-width: 830px) {
