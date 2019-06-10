@@ -302,6 +302,23 @@ class Layout extends React.Component {
                       }
                     }
 
+                    .successPage {
+                      &.mainSection {
+                        height: 100vh;
+                        display: flex;
+                        align-items: center;
+                      }
+                      z-index: 1;
+                      background: #fff;
+                      position: relative;
+                      p {
+                        font-size: 40px;
+                        @media(max-width: 830px) {
+                          font-size: 24px;
+                        }
+                      }
+                    }
+
                     `}</style>
                   </React.Fragment>
                 </ScreenWidthContext.Provider>

@@ -37,24 +37,11 @@ class IndexPage extends Component {
             </Container>
 
             <style jsx>{`
-            .successPage {
-              z-index: 1;
-              background: #fff;
-              position: relative;
-            }
+            
 
-            p {
-              font-size: 40px;
-              @media(max-width: 830px) {
-                font-size: 24px;
-              }
-            }
+            
 
-              .mainSection {
-                height: 100vh;
-                display: flex;
-                align-items: center;
-              }
+              
             `}</style>
           </div>
         )}
