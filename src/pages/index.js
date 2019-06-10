@@ -55,6 +55,7 @@ class IndexPage extends Component {
               display: flex;
               width: 110%;
               left: -5%;
+              z-index: 1;
               height: 30px;
               @media(max-width: 1000px) {
                 height: 20px;

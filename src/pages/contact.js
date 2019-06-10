@@ -67,7 +67,7 @@ const ContactPage = props => {
             </div>
             <header>
             <form action="/success" name="myForm" onSubmit={validateForm} method="POST">
-            <div className="flexCenter">
+            <div style={{margin: '50px 0'}} className="flexCenter">
                   <div className="flexColumn">
 
               <h1>drop us a line</h1>
@@ -79,10 +79,18 @@ const ContactPage = props => {
                     <input type="email" name="email" placeholder="your email"></input>
                     <input type="text" name="topic" placeholder="topic"></input>
                     <textarea name="message" placeholder="your message"></textarea>
+                    <Link to="/">
+                      <div style={{marginTop: 40, marginBottom: 0}} className="linkBox">
+                        <div className="link" >Go back home</div> <span className="rotateDown"><Arrow /> </span>
+                      </div>
+                    </Link>
                   </div>
                   <div className="flexColumnRight">
                     <input type="submit" value="Send"/><div className="submitAfter"><Arrow /></div>
                   </div>
+
+                  
+
                 </div>
 
               </form>
@@ -90,7 +98,7 @@ const ContactPage = props => {
             {/* <div className="resp-container">
                 <iframe className="resp-iframe" src="https://arpistaffing.com/email/contact-form/"></iframe>
             </div> */}
-            <div className="backHome">
+            {/* <div className="backHome">
               <Container>
               <Link to="/">
                 <div className="linkBox">
@@ -98,7 +106,7 @@ const ContactPage = props => {
                 </div>
               </Link>
               </Container>
-            </div>
+            </div> */}
             
             
           </Container>
@@ -115,6 +123,7 @@ const ContactPage = props => {
   display: flex;
   width: 110%;
   left: -5%;
+  z-index: 1;
   height: 30px;
   @media(max-width: 1000px) {
     height: 20px;
