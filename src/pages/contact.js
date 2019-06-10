@@ -229,6 +229,7 @@ const ContactPage = props => {
       textarea {
         margin-bottom: 0;
         padding-bottom: 0;
+        resize: none;
     }
     input[type="submit"] {
       border: none !important;

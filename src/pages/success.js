@@ -1,7 +1,4 @@
 
-  // componentDidMount() {
-  //   setTimeout(function(){ location.href = "/"; }, 2000);
-  // }
 
   import PropTypes from "prop-types";
   import React from "react";
@@ -39,7 +36,9 @@
       return false;
     }
   }
+
   
+
   const SuccessPage = props => {
     const {
       data: {
@@ -48,6 +47,9 @@
         }
       }
     } = props;
+
+
+    setTimeout(function(){ location.href = "/"; }, 2000);
   
     
   
@@ -71,7 +73,7 @@
                 </Link>
               </div>
               <header>
-              <form action="/success" name="myForm" onSubmit={validateForm} method="POST">
+              <form action="http://serwer1901380.home.pl/arpi/email/" name="myForm" onSubmit={validateForm} method="POST">
               <div style={{margin: '50px 0'}} className="flexCenter">
                     <div className="flexColumn">
   
