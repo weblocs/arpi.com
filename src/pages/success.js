@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { graphql, StaticQuery, Link } from "gatsby";
 
+import { ThemeContext } from "../layouts";
+
 import Container from "../components/Container";
 
 class IndexPage extends Component {
@@ -9,6 +11,10 @@ class IndexPage extends Component {
   // }
   render() {
     return (
+      <React.Fragment>
+      <ThemeContext.Consumer>
+        {theme => (
+
       <StaticQuery
         query={graphql`
           query allSuccessPageData {
@@ -36,16 +42,14 @@ class IndexPage extends Component {
               </Link>
             </Container>
 
-            <style jsx>{`
             
-
-            
-
-              
-            `}</style>
           </div>
         )}
       />
+
+      )}
+      </ThemeContext.Consumer>
+      </React.Fragment>
     );
   }
 }
