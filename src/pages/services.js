@@ -104,7 +104,7 @@ class IndexPage extends Component {
                                     <div
                                       className="slideButton mobileBackHome next"
                                     >
-                                      <div>Go back home</div> <span className="rotateDown"><Arrow /></span>
+                                      <div>Go back home</div> <span className="rotateUp"><Arrow /></span>
                                     </div>
                                     </Link>
                                   </div>

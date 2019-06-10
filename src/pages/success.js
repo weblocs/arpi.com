@@ -4,9 +4,9 @@ import { graphql, StaticQuery, Link } from "gatsby";
 import Container from "../components/Container";
 
 class IndexPage extends Component {
-  componentDidMount() {
-    setTimeout(function(){ location.href = "/"; }, 2000);
-  }
+  // componentDidMount() {
+  //   setTimeout(function(){ location.href = "/"; }, 2000);
+  // }
   render() {
     return (
       <StaticQuery
@@ -28,6 +28,7 @@ class IndexPage extends Component {
         `}
         render={data => (
           <div className="mainSection successPage">
+            
             <Container>
               <p>Sent</p>
               <Link to={data.allWordpressPage.edges[0].node.acf.link}>
