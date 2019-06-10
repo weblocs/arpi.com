@@ -132,7 +132,7 @@ class IndexPage extends Component {
         <style jsx>{`
 
         .slideContentItem {
-          @media(min-width:630px){
+          @media(min-width:560px){
             @media(max-width:830px){
               .slideButtons {
                 position: relative;
@@ -145,21 +145,21 @@ class IndexPage extends Component {
           @media(min-width:831px){
           display: none !important;
           }
-          @media(min-width:630px){
+          @media(min-width:560px){
             @media(max-width:830px){
               position: absolute;
               top: 0;
               left: 100px;
             }
           }
-          @media(max-width:629px){
+          @media(max-width:559px){
             display: none !important;
             }
         }
         
 
         .backHome {
-          @media(min-width:630px){
+          @media(min-width:560px){
             @media(max-width:830px){
               display: none;
             }
@@ -284,7 +284,6 @@ class IndexPage extends Component {
             }
             .next {
               position: absolute;
-              bottom: 30px;
             }
           }
         `}</style>

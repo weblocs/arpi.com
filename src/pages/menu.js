@@ -9,9 +9,9 @@ import CollapseMobileItem from "../components/Menu/CollapseMobileItem";
 class IndexPage extends Component {
   render() {
     this.items = [
-      { label: "Browse services", 
-      subitems: [ {text: 'Bemanning', link:'/services/#bemanning'}, {text: 'Regnskap', link:'/services/#regnskap'}, {text: 'Network', link:'/services/#network'}, {text: 'Staffing', link:'/services/#staffing'}, {text: 'Accounting', link: '/services/#accounting'}, {text:'Aviation', link:'/services/#aviation'} ] },
-      
+      // { label: "Browse services", 
+      // subitems: [ {text: 'Bemanning', link:'/services/#bemanning'}, {text: 'Regnskap', link:'/services/#regnskap'}, {text: 'Network', link:'/services/#network'}, {text: 'Staffing', link:'/services/#staffing'}, {text: 'Accounting', link: '/services/#accounting'}, {text:'Aviation', link:'/services/#aviation'} ] },
+      { to: "/services/#bemanning/", label: "Browse services" },
       // ...pages,
       { to: "/contact/", label: "Contact" },
       { label: "Languages", 
@@ -50,8 +50,8 @@ class IndexPage extends Component {
                 {this.items.map(item => (
                 item.subitems ? 
                 <CollapseMobileItem item={{ label: item.label, subitems: item.subitems }}  />
-                : <Link className="mobileMenuItem" to="/contact">
-                    <div className="mobileMenuItem">Contact</div>
+                : <Link className="mobileMenuItem" to={item.to}>
+                    <div className="mobileMenuItem">{item.label}</div>
                   </Link>
               ))}
               </div>
@@ -86,9 +86,9 @@ class IndexPage extends Component {
                   .mobileMenuItem {
                     color: #434343 !important;
                     cursor: pointer;
-                    font-size: 24px;
+                    font-size: 18px;
                     font-weight: 300;
-                    line-height: 32px !important;
+                    line-height: 26px !important;
                     margin-bottom: 20px;
                     line-height: 0.03em;
                     transition: .2s;

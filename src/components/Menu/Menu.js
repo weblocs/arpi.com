@@ -29,7 +29,7 @@ class Menu extends React.Component {
     this.items = [
       { label: "Browse services", 
       subitems: [ {text: 'Bemanning', link:'/services/#bemanning', color: '#005495'}, {text: 'Regnskap', link:'/services/#regnskap', color: '#952d58'}, {text: 'Network', link:'/services/#network', color: '#f25a5b'}, {text: 'Staffing', link:'/services/#staffing', color: '#005495'}, {text: 'Accounting', link: '/services/#accounting', color: '#952d58'}, {text:'Aviation', link:'/services/#aviation', color: '#369cd6'} ] },
-      
+      // { to: "/services/#bemanning/", label: "Browse services" },
       // ...pages,
       { to: "/contact/", label: "Contact" },
       { label: "Languages", 
@@ -231,7 +231,7 @@ class Menu extends React.Component {
               display: flex;
               position: relative;
               justify-content: flex-end;
-              padding-left: 50px;
+              padding-left: 0px;
               transition: none;
             }
 

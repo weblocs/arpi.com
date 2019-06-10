@@ -74,6 +74,9 @@ const Item = props => {
               font-weight: 600;
               padding: 0 20px;
               font-size: 14px;
+              @media(max-width: 830px) {
+                padding: 0 12px;
+              }
             }
 
             :global(.homepage):not(.fixed) & :global(a) {
@@ -84,6 +87,9 @@ const Item = props => {
               font-weight: 600;
               padding: 0 20px;
               font-size: 14px;
+              @media(max-width: 830px) {
+                padding: 0 12px;
+              }
             }
 
             :global(a:hover) {

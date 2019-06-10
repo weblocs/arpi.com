@@ -132,6 +132,12 @@ class CollapseItem extends Component {
                         font-weight: 600;
                         padding: 0 20px;
                         transition: .2s;
+
+                        @media(max-width: 830px) {
+                            padding: 0 12px;
+                        }
+
+                        
                         
                     }
 
@@ -141,6 +147,10 @@ class CollapseItem extends Component {
                     font-weight: 600;
                     padding: 0 20px;
                     transition: .2s;
+
+                    @media(max-width: 830px) {
+                        padding: 0 12px;
+                    }
 
                     }
                     

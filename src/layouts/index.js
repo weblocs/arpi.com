@@ -296,7 +296,7 @@ class Layout extends React.Component {
                         }
                       }
                     }
-                    @media(max-width:800px) {
+                    @media(max-width:720px) {
                       nav.menu {
                         top: -570px;
                       }

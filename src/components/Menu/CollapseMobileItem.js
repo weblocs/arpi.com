@@ -73,9 +73,9 @@ class CollapseMobileItem extends Component {
             :global(span) {
               color: #434343 !important;
               cursor: pointer;
-              font-size: 24px;
+              font-size: 18px;
               font-weight: 300;
-              line-height: 32px !important;
+              line-height: 26px !important;
               margin-bottom: 20px;
               line-height: 0.03em;
               transition: 0.2s;
