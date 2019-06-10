@@ -221,7 +221,6 @@ class Header extends React.Component {
               &.fixed {
                 height: ${theme.header.height.fixed};
                 background-color: ${theme.color.neutral.white};
-                left: 0;
                 padding: 0 ${theme.space.m};
                 position: fixed;
                 top: 0;
