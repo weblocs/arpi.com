@@ -71,14 +71,14 @@ const ContactPage = props => {
                   <div className="flexColumn">
 
               <h1>skriv til oss</h1>
-              <p>Opisz krótko, jakiego rodzaju pomocy możemy Ci udzielić</p>
+              <p>Beskriv kort hva slags hjelp vi kan gi deg</p>
               
 
                 
-                    <input type="text" name="name" placeholder="imię i nazwisko"></input>
-                    <input type="email" name="email" placeholder="twój email"></input>
-                    <input type="text" name="topic" placeholder="temat"></input>
-                    <textarea name="message" placeholder="twoja wiadomość"></textarea>
+                    <input type="text" name="name" placeholder="navn"></input>
+                    <input type="email" name="email" placeholder="email"></input>
+                    <input type="text" name="topic" placeholder="emne"></input>
+                    <textarea name="message" placeholder="beskjed"></textarea>
                     <Link to="/pl">
                       <div style={{marginTop: 40, marginBottom: 0}} className="linkBox">
                         <div className="link" >Powrót</div> <span className="rotateDown"><Arrow /> </span>
@@ -86,7 +86,7 @@ const ContactPage = props => {
                     </Link>
                   </div>
                   <div className="flexColumnRight">
-                    <input type="submit" value="Wyślij"/><div className="submitAfter"><Arrow /></div>
+                    <input type="submit" value="Sende"/><div className="submitAfter"><Arrow /></div>
                   </div>
 
                   
