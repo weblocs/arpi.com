@@ -151,7 +151,7 @@ class Header extends React.Component {
 
           .logo {
             display: inline-block;
-            height: 100px;
+            height: 110px;
             width: 200px;
             margin: ${theme.space.inline.default};
             overflow: hidden;

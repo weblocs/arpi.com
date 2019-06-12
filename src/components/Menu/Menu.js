@@ -43,8 +43,8 @@ class Menu extends React.Component {
         // { to: "/services/#bemanning/", label: "Browse services" },
         // ...pages,
         { to: "/kontakt/", label: "Kontakt" },
-        { label: "Languages", 
-        subitems: [ {text: 'Polish', link:'/pl', color: '#444'}, {text: 'English', link: '/', color: '#444'}, {text:'Norwegian', link:'/nb', color: '#444'} ] },    
+        { label: "Języki", 
+        subitems: [ {text: 'Polski', link:'/pl', color: '#444'}, {text: 'Angielski', link: '/', color: '#444'}, {text:'Norweski', link:'/nb', color: '#444'} ] },    
       ];
     } else if(this.props.lang == "nb") {
       this.items = [
@@ -53,8 +53,8 @@ class Menu extends React.Component {
         // { to: "/services/#bemanning/", label: "Browse services" },
         // ...pages,
         { to: "/kontakt-no/", label: "Kontakt" },
-        { label: "Languages", 
-        subitems: [ {text: 'Polish', link:'/pl', color: '#444'}, {text: 'English', link: '/', color: '#444'}, {text:'Norwegian', link:'/nb', color: '#444'} ] },    
+        { label: "Språk", 
+        subitems: [ {text: 'Polsk', link:'/pl', color: '#444'}, {text: 'Engelsk', link: '/', color: '#444'}, {text:'Norsk', link:'/nb', color: '#444'} ] },    
       ];
     }
 
