@@ -59,9 +59,9 @@ const ContactPage = props => {
               <span></span>
             </div>
             <div>
-              <Link to="/pl">
+              <Link to="/nb">
                 <div className="linkBox linkBoxMobile">
-                  <div className="link" >Powrót</div> <span className="rotateUp"><Arrow /> </span>
+                  <div className="link" >Retur</div> <span className="rotateUp"><Arrow /> </span>
                 </div>
               </Link>
             </div>
@@ -79,9 +79,9 @@ const ContactPage = props => {
                     <input type="email" name="email" placeholder="email"></input>
                     <input type="text" name="topic" placeholder="emne"></input>
                     <textarea name="message" placeholder="beskjed"></textarea>
-                    <Link to="/pl">
+                    <Link to="/nb">
                       <div style={{marginTop: 40, marginBottom: 0}} className="linkBox">
-                        <div className="link" >Powrót</div> <span className="rotateDown"><Arrow /> </span>
+                        <div className="link" >Retur</div> <span className="rotateDown"><Arrow /> </span>
                       </div>
                     </Link>
                   </div>
