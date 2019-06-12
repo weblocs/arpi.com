@@ -168,7 +168,7 @@ const ContactPage = props => {
           }
           h1, p {
             @media(min-width: 1000px) {
-              min-width: 400px;
+              min-width: 411px;
             }
           }
         }
