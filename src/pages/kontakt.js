@@ -70,15 +70,15 @@ const ContactPage = props => {
             <div style={{margin: '50px 0'}} className="flexCenter">
                   <div className="flexColumn">
 
-              <h1>napisz do nas</h1>
-              <p>Opisz krótko, jakiego rodzaju pomocy możemy Ci udzielić</p>
+                  <h1>napisz do nas</h1>
+            <p>Opisz krótko, jak możemy Ci pomóc</p>
               
 
                 
                     <input type="text" name="name" placeholder="imię i nazwisko"></input>
-                    <input type="email" name="email" placeholder="twój email"></input>
+                    <input type="email" name="email" placeholder="adres email"></input>
                     <input type="text" name="topic" placeholder="temat"></input>
-                    <textarea name="message" placeholder="twoja wiadomość"></textarea>
+                    <textarea name="message" placeholder="wiadomość"></textarea>
                     <Link to="/pl">
                       <div style={{marginTop: 40, marginBottom: 0}} className="linkBox">
                         <div className="link" >Powrót</div> <span className="rotateDown"><Arrow /> </span>
@@ -88,6 +88,11 @@ const ContactPage = props => {
                   <div className="flexColumnRight">
                     <input type="submit" value="Wyślij"/><div className="submitAfter"><Arrow /></div>
                   </div>
+
+                
+
+
+
 
                   
 
@@ -168,7 +173,7 @@ const ContactPage = props => {
           }
           h1, p {
             @media(min-width: 1000px) {
-              min-width: 411px;
+              min-width: 412px;
             }
           }
         }
