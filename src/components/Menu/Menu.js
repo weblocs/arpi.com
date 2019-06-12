@@ -19,13 +19,14 @@ class Menu extends React.Component {
     super(props);
     this.itemList = React.createRef();
 
-    const pages = props.pages.map(page => ({
-      to: page.node.fields.slug,
-      label: page.node.frontmatter.menuTitle
-        ? page.node.frontmatter.menuTitle
-        : page.node.frontmatter.title
-    }));
+    // const pages = props.pages.map(page => ({
+    //   to: page.node.fields.slug,
+    //   label: page.node.frontmatter.menuTitle
+    //     ? page.node.frontmatter.menuTitle
+    //     : page.node.frontmatter.title
+    // }));
 
+    if(this.props.lang == "en") {
     this.items = [
       { label: "Browse services", 
       subitems: [ {text: 'Bemanning', link:'/services/#bemanning', color: '#005495'}, {text: 'Regnskap', link:'/services/#regnskap', color: '#952d58'}, {text: 'Network', link:'/services/#network', color: '#f25a5b'}, {text: 'Staffing', link:'/services/#staffing', color: '#005495'}, {text: 'Accounting', link: '/services/#accounting', color: '#952d58'}, {text:'Aviation', link:'/services/#aviation', color: '#369cd6'} ] },
@@ -33,9 +34,29 @@ class Menu extends React.Component {
       // ...pages,
       { to: "/contact/", label: "Contact" },
       { label: "Languages", 
-      subitems: [ {text: 'Polish', link:'/pl', color: '#444'}, {text: 'English', link: '/', color: '#444'}, {text:'Norwegian', link:'/nb', color: '#444'} ] },
-      
+      subitems: [ {text: 'Polish', link:'/pl', color: '#444'}, {text: 'English', link: '/', color: '#444'}, {text:'Norwegian', link:'/nb', color: '#444'} ] },    
     ];
+    } else if(this.props.lang == "pl") {
+      this.items = [
+        { label: "Nasze usługi", 
+        subitems: [ {text: 'Bemanning', link:'/services/#bemanning', color: '#005495'}, {text: 'Regnskap', link:'/services/#regnskap-3', color: '#952d58'}, {text: 'Network', link:'/services/#network-2', color: '#f25a5b'}, {text: 'Staffing', link:'/services/#staffing-3', color: '#005495'}, {text: 'Accounting', link: '/services/#accounting-2', color: '#952d58'}, {text:'Aviation', link:'/services/#aviation-3', color: '#369cd6'} ] },
+        // { to: "/services/#bemanning/", label: "Browse services" },
+        // ...pages,
+        { to: "/kontakt/", label: "Kontakt" },
+        { label: "Languages", 
+        subitems: [ {text: 'Polish', link:'/pl', color: '#444'}, {text: 'English', link: '/', color: '#444'}, {text:'Norwegian', link:'/nb', color: '#444'} ] },    
+      ];
+    } else if(this.props.lang == "nb") {
+      this.items = [
+        { label: "Bla gjennom tjenester", 
+        subitems: [ {text: 'Bemanning', link:'/tjenester/#bemanning', color: '#005495'}, {text: 'Regnskap', link:'/tjenester/#regnskap-2', color: '#952d58'}, {text: 'Network', link:'/tjenester/#network-3', color: '#f25a5b'}, {text: 'Staffing', link:'/tjenester/#staffing-2', color: '#005495'}, {text: 'Accounting', link: '/tjenester/#accounting-3', color: '#952d58'}, {text:'Aviation', link:'/tjenester/#aviation-2', color: '#369cd6'} ] },
+        // { to: "/services/#bemanning/", label: "Browse services" },
+        // ...pages,
+        { to: "/kontakt-no/", label: "Kontakt" },
+        { label: "Språk", 
+        subitems: [ {text: 'Polish', link:'/pl', color: '#444'}, {text: 'English', link: '/', color: '#444'}, {text:'Norwegian', link:'/nb', color: '#444'} ] },    
+      ];
+    }
 
     this.renderedItems = []; // will contain references to rendered DOM elements of menu
   }

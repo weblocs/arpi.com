@@ -26,13 +26,13 @@ class Header extends React.Component {
 
   getHeaderSize = () => {
     const fixed = this.state.fixed ? "fixed" : "";
-    const homepage = this.props.path === "/" ? "homepage" : "";
+    const homepage = "homepage";
 
     return `${fixed} ${homepage}`;
   };
 
   render() {
-    const { pages, path, theme } = this.props;
+    const { pages, path, theme, lang } = this.props;
     const { fixed } = this.state;
 
     return (
@@ -48,8 +48,10 @@ class Header extends React.Component {
             <FontLoadedContext.Consumer>
               {loaded => (
                 <ScreenWidthContext.Consumer>
+                  
                   {width => (
                     <Menu
+                      lang={lang}
                       path={path}
                       fixed={fixed}
                       screenWidth={width}
@@ -278,6 +280,8 @@ class Header extends React.Component {
               }
             }
           }
+
+          
         `}</style>
       </React.Fragment>
     );

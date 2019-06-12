@@ -4,8 +4,21 @@ import { graphql, StaticQuery, Link } from "gatsby";
 import Arrow from "../images/svg-icons/arrow-right-gray.svg";
 import Container from "../components/Container";
 import Hamburger from "../components/Menu/Hamburger";
+import Header from "../components/Header";
+
+import themeObjectFromYaml from "../theme/theme.yaml";
 
 class IndexPage extends Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      theme: themeObjectFromYaml
+    };
+  }
+  
+
   componentDidMount() {
     //setTimeout(function(){ location.href = "/services"; }, 6000);
   }
@@ -15,6 +28,9 @@ class IndexPage extends Component {
       <StaticQuery
         query={graphql`
           query allIndexPageData {
+            
+
+
             allWordpressPage(sort: { fields: menu_order, order: ASC }) {
               edges {
                 node {
@@ -30,7 +46,17 @@ class IndexPage extends Component {
           }
         `}
         render={data => (
+          <div>
+            <Header
+                      path="/"
+                      theme={this.state.theme}
+                      lang="en"
+                    />
+          
           <div className="mainSection">
+
+                    
+         
             <Hamburger />
             <Container>
               <p>{data.allWordpressPage.edges[0].node.title}</p>
@@ -123,6 +149,7 @@ class IndexPage extends Component {
               }
               
             `}</style>
+          </div>
           </div>
         )}
       />

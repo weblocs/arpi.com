@@ -60,9 +60,7 @@ const Item = props => {
           }
         }
 
-        :global(.itemList .hideItem) {
-          display: none;
-        }
+        
 
         @from-width desktop {
           .item {

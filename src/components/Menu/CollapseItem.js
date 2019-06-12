@@ -193,9 +193,12 @@ class CollapseItem extends Component {
                 align-items: center;
 
                 :global(a) {
-                    padding: ${theme.space.inset.s};
+                    padding: 0 20px;
                     display: flex;
                     align-items: center;
+                    font-weight: 600;
+                    font-size: 14px;
+                    margin-bottom: 5px;
                 }
 
                 .rotate {
@@ -209,9 +212,7 @@ class CollapseItem extends Component {
                 }
                 }
 
-                :global(.itemList .hideItem) {
-                display: none;
-                }
+                
 
                 @from-width desktop {
                 .item {

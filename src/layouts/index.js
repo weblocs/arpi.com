@@ -125,11 +125,11 @@ class Layout extends React.Component {
               <FontLoadedContext.Provider value={this.state.font400loaded}>
                 <ScreenWidthContext.Provider value={this.state.screenWidth}>
                   <React.Fragment>
-                    <Header
+                    {/* <Header
                       path={this.props.location.pathname}
                       pages={pages}
                       theme={this.state.theme}
-                    />
+                    /> */}
                     <Transition location={this.props.location}>
                     <main>{children}</main>
                     </Transition>
@@ -318,7 +318,7 @@ class Layout extends React.Component {
                         }
                       }
                     }
-
+                    
                     `}</style>
                   </React.Fragment>
                 </ScreenWidthContext.Provider>

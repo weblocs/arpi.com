@@ -4,18 +4,39 @@ import { graphql, StaticQuery, Link } from "gatsby";
 import Arrow from "../images/svg-icons/arrow-right-gray.svg";
 import Container from "../components/Container";
 import Hamburger from "../components/Menu/Hamburger";
+import Header from "../components/Header";
+
+import themeObjectFromYaml from "../theme/theme.yaml";
 
 class IndexPage extends Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      theme: themeObjectFromYaml
+    };
+  }
+  
+
+  componentDidMount() {
+    //setTimeout(function(){ location.href = "/services"; }, 6000);
+  }
+  
   render() {
     return (
       <StaticQuery
         query={graphql`
           query allIndexPlPageData {
+            
+
+
             allWordpressPage(sort: { fields: menu_order, order: ASC }) {
               edges {
                 node {
                   title
                   slug
+                  wordpress_id
                   acf {
                     button
                     link
@@ -26,13 +47,23 @@ class IndexPage extends Component {
           }
         `}
         render={data => (
+          <div>
+            <Header
+                      path="/pl"
+                      theme={this.state.theme}
+                      lang="pl"
+                    />
+          
           <div className="mainSection">
+
+                    
+         
             <Hamburger />
             <Container>
-              <p>{data.allWordpressPage.edges[0].node.title}</p>
+              <p>{data.allWordpressPage.edges.filter(page => page.node.wordpress_id === 80)[0].node.title}</p>
               
-              <Link className="slideButton" to={data.allWordpressPage.edges[0].node.acf.link}>
-                <div className="textGray">{data.allWordpressPage.edges[0].node.acf.button}</div> <Arrow /> 
+              <Link className="slideButton" to={data.allWordpressPage.edges.filter(page => page.node.wordpress_id === 80)[0].node.acf.link}>
+                <div className="textGray">{data.allWordpressPage.edges.filter(page => page.node.wordpress_id === 80)[0].node.acf.button}</div> <Arrow /> 
               </Link>
             </Container>
 
@@ -51,7 +82,11 @@ class IndexPage extends Component {
               display: flex;
               width: 110%;
               left: -5%;
+              z-index: 1;
               height: 30px;
+              @media(max-width: 1000px) {
+                height: 20px;
+              }
               span {
                 width: 25%;
                 transform: skewX(-25deg);
@@ -77,6 +112,8 @@ class IndexPage extends Component {
                 align-items: center;
 
                 
+
+                
                 
                 
                 p {
@@ -89,15 +126,31 @@ class IndexPage extends Component {
                   margin-bottom: 40px;  
                   margin-top: 100px;
                   @media(max-width: 830px) {
+                    margin-bottom: 5px;
+                    line-height: 32px;
+                    font-size: 30px;
+                    max-width: 350px;
+                    margin-top: 160px;
+                  }
+
+                  @media(max-width:700px) {
+                    margin-top: 115px;
+                  }
+
+
+                  @media(max-width: 500px) {
+                    margin-top: 50px;
+                    max-width: 263px;
+                    margin-bottom: 40px;
                     line-height: 44px;
                     font-size: 40px;
-                    max-width: 263px;
-                    margin-top: 0px;
+                    
                   }
                 }
               }
               
             `}</style>
+          </div>
           </div>
         )}
       />
